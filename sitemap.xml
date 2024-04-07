@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/</loc>
+    <loc>https://imasugu.cc/</loc>
     <lastmod>2024-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/about/</loc>
+    <loc>https://imasugu.cc/about/</loc>
     <lastmod>2024-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
+    <loc>https://imasugu.cc/posts/</loc>
     <lastmod>2022-08-09T15:38:30+08:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/hugo/</loc>
+    <loc>https://imasugu.cc/tags/hugo/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/rich-content/</loc>
+    <loc>https://imasugu.cc/posts/rich-content/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>https://imasugu.cc/tags/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/archive/</loc>
+    <loc>https://imasugu.cc/archive/</loc>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>https://imasugu.cc/categories/</loc>
   </url><url>
-    <loc>//localhost:1313/series/</loc>
+    <loc>https://imasugu.cc/series/</loc>
   </url><url>
-    <loc>//localhost:1313/favs/</loc>
+    <loc>https://imasugu.cc/favs/</loc>
   </url>
 </urlset>
