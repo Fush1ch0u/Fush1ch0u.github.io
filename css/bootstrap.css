@@ -1097,12 +1097,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #46893e;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #255120;
   text-decoration: underline;
 }
 a:focus {
@@ -1337,25 +1337,25 @@ mark,
   color: #777777;
 }
 .text-primary {
-  color: #337ab7;
+  color: #597c5a;
 }
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #286090;
+  color: #316e2a;
 }
 .text-success {
-  color: #3c763d;
+  color: #597c5a;
 }
 a.text-success:hover,
 a.text-success:focus {
-  color: #2b542c;
+  color: #316e2a;
 }
 .text-info {
-  color: #31708f;
+  color: #597c5a;
 }
 a.text-info:hover,
 a.text-info:focus {
-  color: #245269;
+  color: #316e2a;
 }
 .text-warning {
   color: #8a6d3b;
@@ -1373,11 +1373,11 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #597c5a;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #286090;
+  background-color: #316e2a;
 }
 .bg-success {
   background-color: #dff0d8;
@@ -1830,8 +1830,9 @@ pre code {
 .col-xs-offset-3 {
   margin-left: 25%;
 }
+/*下方原代碼為16.66666667%*/
 .col-xs-offset-2 {
-  margin-left: 16.66666667%;
+  margin-left: 8.33333333%;
 }
 .col-xs-offset-1 {
   margin-left: 8.33333333%;
@@ -1999,7 +2000,7 @@ pre code {
     margin-left: 25%;
   }
   .col-sm-offset-2 {
-    margin-left: 16.66666667%;
+    margin-left: 8.33333333%;
   }
   .col-sm-offset-1 {
     margin-left: 8.33333333%;
@@ -2168,7 +2169,7 @@ pre code {
     margin-left: 25%;
   }
   .col-md-offset-2 {
-    margin-left: 16.66666667%;
+    margin-left: 8.33333333%;
   }
   .col-md-offset-1 {
     margin-left: 8.33333333%;
@@ -4899,8 +4900,9 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .pager li > a:hover,
 .pager li > a:focus {
-  text-decoration: none;
-  background-color: #eeeeee;
+  color:#fff;
+  background-color:#316e2a;
+  border:1px solid #316e2a
 }
 .pager .next > a,
 .pager .next > span {
