@@ -19,7 +19,7 @@
   <meta property="og:title" content="折騰小記｜如果你也想建個靜態博客：（一）安裝hugo" />
 <meta property="og:description" content="第一步：先把博客建起來。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://imasugu.cc/posts/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://imasugu.cc/posts/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-06-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2024-06-13T00:00:00+00:00" />
 
@@ -205,20 +205,8 @@
 <p>說點廢話：</p>
 <ul>
 <li>本篇以及後續的小文均不能算是嚴肅教程，充其量算我的一些記錄，目的是幫助想要建立靜態博客但完全沒有代碼基礎的朋友（我也沒有）少踩一些坑。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
 <li>我會盡力把自己記憶中建立博客的過程貼上來，但仍可能會出現錯漏和不夠詳細的地方，請閱讀本篇的朋友不吝指正。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>本篇的用語爲：繁體中文。敬請注意。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
+<li>本篇的用語爲：繁體中文。</li>
 <li>本篇主要內容：安裝 Hugo，並且把你的博客文件夾建起來！</li>
 </ul>
 </blockquote>
@@ -237,13 +225,14 @@
 <blockquote>
 <p><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code></p>
 </blockquote>
-<p>但，在沒有網絡條件的情況下可能會顯示“failed to connect &hellip;”之類的內容。此時可採用國內鏡像源下載安裝。將如下內容複製貼入終端機：</p>
+<p>但，在沒有網絡條件的情況下可能會顯示“failed to connect &hellip;”之類的內容。此時可採用國內鏡像源下載安裝。<br>
+將如下內容複製貼入終端機：</p>
 <blockquote>
 <p><code>/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</code></p>
 </blockquote>
 <p>選擇下載源並輸入密碼安裝即可（我記得我選擇的是中科大的源）。後期替換源就請另外搜索解決辦法啦，這方面我也不是專家&gt;&lt;</p>
 <p><strong><font size="4">方式 2: pkg 文件安裝</font></strong><br>
-官網也說了最新版的 4.3.5 可以試試 pkg 文件安裝：https://github.com/Homebrew/brew/releases/tag/4.3.5 拖動安裝即可，簡單快捷！
+官網也說了最新版的 4.3.5 可以試試 pkg 文件安裝：<strong><a href="https://github.com/Homebrew/brew/releases/tag/4.3.5" target="_blank">https://github.com/Homebrew/brew/releases/tag/4.3.5</a></strong> 拖動安裝即可，簡單快捷！<br>
 安裝完成之後用<code>brew update</code>命令檢查狀態，再試試<code>brew -v</code>查看當前版本，確認 Homebrew 安裝完成。</p>
 <h3 id="安裝-hugo-1">安裝 Hugo<a class="anchorjs-link" href="#%e5%ae%89%e8%a3%9d-hugo-1"></a></h3><p>在終端機中輸入<code>brew install hugo</code>，完成後輸入<code>hugo version</code>，如果安裝成功會出現如下代碼：</p>
 <pre><code>hugo v0.123.0-3c8a4713908e48e6523f058ca126710397aa4ed5+extended darwin/arm64 BuildDate=2024-02-19T16:32:38Z VendorInfo=brew&lt;/span&gt;
@@ -295,9 +284,9 @@ layouts（全局樣式）<br>
 public（保存的編譯完成的 html 文件，同時也是對外發佈的內容）<br>
 static（靜態文件）<br>
 themes（主題）</p>
-<p>此時的博客文件夾光禿禿一片，要添加一個主題才能看到博客效果。你可以選擇前往官方站點<a href="https://themes.gohugo.io/" target="_blank">Hugo themes</a>尋找一個你喜歡的主題，按照主題作者的說明來進行安裝使用。
-（本博選用了<a href="https://github.com/roninro/hugo-theme-puppet" target="_blank">Puppet</a>作為母版來進行魔改，但該主題作者已經兩年沒有更新了，所以各位不一定要用這個主題嗷。）
-按照主題作者的說明，可以選擇在根目錄下<code>git init</code>後<code>git clone</code>的方式，也可以簡單粗暴地直接複製整個文件夾的內容到博客文件夾根目錄。
+<p>此時的博客文件夾光禿禿一片，要添加一個主題才能看到博客效果。你可以選擇前往官方站點<a href="https://themes.gohugo.io/" target="_blank">Hugo themes</a>尋找一個你喜歡的主題，按照主題作者的說明來進行安裝使用。<br>
+（本博選用了<a href="https://github.com/roninro/hugo-theme-puppet" target="_blank">Puppet</a>作為母版來進行魔改，但該主題作者已經兩年沒有更新了，所以各位不一定要用這個主題嗷。）<br>
+按照主題作者的說明，可以選擇在根目錄下<code>git init</code>後<code>git clone</code>的方式，也可以簡單粗暴地直接複製整個文件夾的內容到博客文件夾根目錄。<br>
 複製完成後在根目錄中（<code>cd myblog</code>）輸入<code>hugo server</code>，hugo 就開始生成頁面了：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>umi@MerrydeMacBook-Pro blog % hugo server
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>Watching <span style="color:#ff79c6">for</span> changes in /Users/yourname/Documents/personal/myblog/<span style="color:#ff79c6">{</span>archetypes,assets,content,data,i18n,layouts,static<span style="color:#ff79c6">}</span>
@@ -324,12 +313,11 @@ themes（主題）</p>
 </span></span></code></pre></div><p>地址欄輸入上方這個地址：<code>http://localhost:1313/</code>，現在你應該就能看到個人網頁的雛形了：
 <figure>
   <a class="paragraph-image">
-    <img data-src="build-a-hugo-blog/hugo-samplesite.png" data-action="zoom" alt="一個大概模版"  class="lazyload">
+    <img data-src="hugo-samplesite.png" data-action="zoom" alt="一个模版"  class="lazyload">
   </a>
   
 </figure></p>
-<p>##肆意書寫本不需要太多鋪墊
-如果對主題沒有什麼特殊要求只是想有個地方寫東西的話，這個時候把標題改改那麼你已經 ready to go 啦！打開根目錄下的 hugo.toml 文件，將標題中的 My New Hugo Site 改成自己喜歡的博客標題。</p>
+<h2 id="肆意書寫本不需要太多鋪墊">肆意書寫本不需要太多鋪墊<a class="anchorjs-link" href="#%e8%82%86%e6%84%8f%e6%9b%b8%e5%af%ab%e6%9c%ac%e4%b8%8d%e9%9c%80%e8%a6%81%e5%a4%aa%e5%a4%9a%e9%8b%aa%e5%a2%8a"></a></h2><p>如果對主題沒有什麼特殊要求只是想有個地方寫東西的話，這個時候把標題改改那麼你已經 ready to go 啦！打開根目錄下的 hugo.toml 文件，將標題中的 My New Hugo Site 改成自己喜歡的博客標題。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#8be9fd;font-style:italic">baseURL</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;https://example.org/&#39;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#8be9fd;font-style:italic">languageCode</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;en-us&#39;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#8be9fd;font-style:italic">title</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;My New Hugo Site&#39;</span>
@@ -361,7 +349,7 @@ themes（主題）</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>short: <span style="color:#8be9fd;font-style:italic">true</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>---
 </span></span></code></pre></div><p>寫好第一篇博文，一個最簡單的靜態博客就已算成功建立，至於日後賽博房間要如何裝修，刷什麼漆擺什麼物件，就全憑你自己的喜好來，裝修其實是個非常耗時耗精力（當然也非常有趣）的事情，並不一定要急於短時間內搞定。</p>
-<h3 id="主題推薦和一些廢話">主題推薦？和一些廢話<a class="anchorjs-link" href="#%e4%b8%bb%e9%a1%8c%e6%8e%a8%e8%96%a6%e5%92%8c%e4%b8%80%e4%ba%9b%e5%bb%a2%e8%a9%b1"></a></h3><p>除了當前主題，其實個人最想用的是<a href="https://github.com/mrhelloboy/seven" target="_blank">Seven</a>這個主題，簡潔、優雅又富有設計感，但我幾個月前每次嘗試安裝+魔改就反覆報錯，可能是因爲完全看不懂 tailwind 的緣故，不知道改到哪就開始報錯了&hellip;
+<h3 id="主題推薦和一些廢話">主題推薦？和一些廢話<a class="anchorjs-link" href="#%e4%b8%bb%e9%a1%8c%e6%8e%a8%e8%96%a6%e5%92%8c%e4%b8%80%e4%ba%9b%e5%bb%a2%e8%a9%b1"></a></h3><p>除了當前主題，其實個人最想用的是<a href="https://github.com/mrhelloboy/seven" target="_blank">Seven</a>這個主題，簡潔、優雅又富有設計感，但我幾個月前每次嘗試安裝+魔改就反覆報錯，可能是因爲完全看不懂 tailwind 的緣故，不知道改到哪就開始報錯了&hellip;<br>
 不過最近作者更新了主題，萬一我哪天又想起來折騰去魔改了呢&hellip;？（被拖走）</p>
 <p>謝謝路過的讀者們耐心讀到這裏。下一篇更新會說一下本地博客託管到 github 怎麼操作以及我部署過程中踩的一些坑XD</p>
 

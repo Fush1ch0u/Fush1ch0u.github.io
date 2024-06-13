@@ -11,9 +11,9 @@
     <atom:link href="https://imasugu.cc/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>折騰小記｜如果你也想建個靜態博客：（一）安裝hugo</title>
-      <link>https://imasugu.cc/posts/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/</link>
+      <link>https://imasugu.cc/posts/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/</link>
       <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://imasugu.cc/posts/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/</guid>
+      <guid>https://imasugu.cc/posts/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BB%BA%E5%80%8B%E9%9D%9C%E6%85%8B%E5%8D%9A%E5%AE%A2%E4%B8%80%E5%AE%89%E8%A3%9Dhugo/</guid>
       <description>——是不是每一個博客主的第一篇博文都會和自己建立博客的心路歷程有關啊。 說點廢話： 本篇以及後續的小文均不能算是嚴肅教程，充其量算我的一些記錄，</description>
     </item>
   </channel>
