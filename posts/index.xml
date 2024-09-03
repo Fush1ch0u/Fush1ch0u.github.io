@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 東井</title>
+    <title>文章列表 on 東井</title>
     <link>https://imasugu.cc/posts/</link>
-    <description>Recent content in Posts on 東井</description>
+    <description>Recent content in 文章列表 on 東井</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>cn</language>
-    <copyright>©2024 Blogging By Umi</copyright>
-    <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://imasugu.cc/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>© 2024 </copyright>
+    <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>折騰小記｜如果你也想建個靜態博客：（一）安裝hugo</title>
       <link>https://imasugu.cc/posts/build-a-blog/install-hugo/</link>
       <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://imasugu.cc/posts/build-a-blog/install-hugo/</guid>
-      <description>——是不是每一個博客主的第一篇博文都會和自己建立博客的心路歷程有關啊。 說點廢話： 本篇以及後續的小文均不能算是嚴肅教程，充其量算我的一些記錄，</description>
+      <description>——是不是每一個博客主的第一篇博文都會和自己建立博客的心路歷程有關啊。</description>
+      
     </item>
+    
   </channel>
 </rss>

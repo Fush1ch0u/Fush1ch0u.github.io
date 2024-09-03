@@ -5,16 +5,18 @@
     <link>https://imasugu.cc/series/</link>
     <description>Recent content in Series on 東井</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>cn</language>
-    <copyright>©2024 Blogging By Umi</copyright>
-    <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://imasugu.cc/series/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>© 2024 </copyright>
+    <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>建個博客</title>
       <link>https://imasugu.cc/series/%E5%BB%BA%E5%80%8B%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://imasugu.cc/series/%E5%BB%BA%E5%80%8B%E5%8D%9A%E5%AE%A2/</guid>
       <description></description>
+      
     </item>
+    
   </channel>
 </rss>
