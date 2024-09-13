@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>文章標籤 on 東井</title>
+    <link>https://imasugu.cc/tags/</link>
+    <description>Recent content in 文章標籤 on 東井</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Blogging by Umi &amp;copy; 2024</copyright>
+    <lastBuildDate>Fri, 13 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>看點演出</title>
+      <link>https://imasugu.cc/tags/%E7%9C%8B%E9%BB%9E%E6%BC%94%E5%87%BA/</link>
+      <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://imasugu.cc/tags/%E7%9C%8B%E9%BB%9E%E6%BC%94%E5%87%BA/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://imasugu.cc/tags/blog/</link>
+      <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://imasugu.cc/tags/blog/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://imasugu.cc/tags/hugo/</link>
+      <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://imasugu.cc/tags/hugo/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Advanced</title>
+      <link>https://imasugu.cc/tags/advanced/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://imasugu.cc/tags/advanced/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
