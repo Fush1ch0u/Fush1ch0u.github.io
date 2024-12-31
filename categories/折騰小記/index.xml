@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Blogging by Umi &amp;copy; 2024</copyright>
-    <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/categories/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/categories/%E6%8A%98%E9%A8%B0%E5%B0%8F%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>折騰小記｜獨居租房：做不完的功課</title>
+      <link>https://imasugu.cc/posts/rent-a-room/</link>
+      <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://imasugu.cc/posts/rent-a-room/</guid>
+      <description>如果你租房超過2年，那你一定懂我在說什麼。</description>
+      
+    </item>
+    
     <item>
       <title>折騰小記｜如果你也想建個靜態博客：（一）安裝hugo</title>
       <link>https://imasugu.cc/posts/build-a-blog/install-hugo/</link>
