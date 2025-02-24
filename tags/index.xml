@@ -6,13 +6,13 @@
     <description>Recent content in 文章標籤 on 東井</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>Blogging by Umi &amp;copy; 2025</copyright>
-    <lastBuildDate>Tue, 31 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>東井  &amp;copy; 2025 · Please Don&#39;t Reblog or Repost Without Asking Permission</copyright>
+    <lastBuildDate>Sun, 23 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>生活</title>
       <link>https://imasugu.cc/tags/%E7%94%9F%E6%B4%BB/</link>
-      <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
       
       <guid>https://imasugu.cc/tags/%E7%94%9F%E6%B4%BB/</guid>
       <description></description>
@@ -55,7 +55,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://imasugu.cc/tags/advanced/</guid>
-      <description></description>
+      <description>&lt;p&gt;This is the advanced tag. Just like other listing pages in Blowfish, you can add custom content to individual taxonomy terms and it will be displayed at the top of the term listing. &amp;#x1f680;&lt;/p&gt;
+&lt;p&gt;You can also use these content pages to define Hugo metadata like titles and descriptions that will be used for SEO and other purposes.&lt;/p&gt;</description>
       
     </item>
     
