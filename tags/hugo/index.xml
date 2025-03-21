@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>東井  &amp;copy; 2025 · Please Don&#39;t Reblog or Repost Without Asking Permission</copyright>
-    <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://imasugu.cc/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>折騰小記｜更改blowfish主題配色</title>
+      <link>https://imasugu.cc/posts/blowfish-colorscheme/</link>
+      <pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://imasugu.cc/posts/blowfish-colorscheme/</guid>
+      <description>賽博空間的牆面要刷自己喜歡的油漆。</description>
+      
+    </item>
     
     <item>
       <title>折騰小記｜如果你也想建個靜態博客：（一）安裝hugo</title>
