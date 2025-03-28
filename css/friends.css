@@ -181,7 +181,7 @@ html:not(.dark) .friend-name {
 
 /* 深色模式下的文字颜色 */
 html.dark .friend-name {
-    color: rgb(var(--color-neutral-500));
+    color: rgb(var(--color-neutral-600));
 }
 
 /* 浅色模式下的卡片阴影 */

@@ -17,6 +17,11 @@ const proxyList = [
 ];
 
 function fetchSiteMetadata(card, url, proxyIndex = 0) {
+    // 获取自定义内容
+    const customAvatar = card.getAttribute("data-custom-avatar");
+    const customDesc = card.getAttribute("data-custom-desc");
+    const customTitle = card.getAttribute("data-custom-title");
+
     if (proxyIndex >= proxyList.length) {
         console.warn(`❌ 所有代理都失败，使用后备数据: ${url}`);
         updateCardContent(card, {
@@ -47,10 +52,13 @@ function fetchSiteMetadata(card, url, proxyIndex = 0) {
             const siteBaseUrl = new URL(url).origin;
 
             const metadata = {
-                title: extractTitle(doc),
-                description: extractDescription(doc),
-                favicon: null,  // 先为空，后续检查
-                avatar: extractAvatar(doc, siteBaseUrl)
+                // 优先使用自定义标题
+                title: customTitle || extractTitle(doc),
+                // 优先使用自定义描述
+                description: customDesc || extractDescription(doc),
+                favicon: null,
+                // 优先使用自定义头像
+                avatar: customAvatar || extractAvatar(doc, siteBaseUrl)
             };
 
             // 提前查找 favicon
@@ -63,7 +71,7 @@ function fetchSiteMetadata(card, url, proxyIndex = 0) {
         })
         .catch(error => {
             console.warn(`⚠️ 代理 ${proxyIndex} 失败，尝试下一个:`, error);
-            setTimeout(() => fetchSiteMetadata(card, url, proxyIndex + 1), 500); // 加一点延迟，避免短时间内连续请求
+            setTimeout(() => fetchSiteMetadata(card, url, proxyIndex + 1), 500);
         });
 }
 
@@ -92,21 +100,21 @@ function extractTitle(doc) {
 function extractDescription(doc) {
     console.log("开始获取描述...");
 
-    // 首先尝试从 schema.org 数据中获取
+    // 先尝试获取 schema.org 数据
     const schemaScript = doc.querySelector('script[type="application/ld+json"]');
     if (schemaScript) {
         try {
             const schemaData = JSON.parse(schemaScript.textContent);
-            if (schemaData.description) {
-                console.log("✅ 从 schema.org 获取到描述:", schemaData.description);
-                return schemaData.description;
+            if (schemaData.description && schemaData.description.trim()) {
+                console.log("✅ 使用 schema.org 描述:", schemaData.description);
+                return schemaData.description.trim();
             }
         } catch (e) {
             console.log("解析 schema.org 数据失败:", e);
         }
     }
 
-    // 然后尝试其他 meta 标签
+    // 然后尝试 meta 标签
     const descSelectors = [
         "meta[name='description']",
         "meta[property='og:description']",
@@ -117,9 +125,7 @@ function extractDescription(doc) {
         const element = doc.querySelector(selector);
         if (element) {
             const desc = element.getAttribute("content");
-            console.log(`检查 ${selector}:`, desc);
-            
-            if (desc && desc.length >= 5 && desc !== "此页面是使用 Hugo 的 Blowfish 主题搭建的") {
+            if (desc && desc.trim()) {  // 只要不是空字符串就可以
                 console.log(`✅ 使用描述 (${selector}):`, desc);
                 return desc.trim();
             }
