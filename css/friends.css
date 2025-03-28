@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'Irohamaru';
+    src: url('/fonts/irohamaru-Medium.ttf');
+}
+
+/* 繁媛明朝简体-m */
+@font-face {
+    font-family: 'FanWunMing-M';
+    src: url('/fonts/FanWunMing-M.ttf');
+}
+
+/* 繁媛明朝简体-sb */
+@font-face {
+    font-family: 'FanWunMing-SB';
+    src: url('/fonts/FanWunMing-SB.ttf');
+}
+
+/* 繁媛明朝繁体-sb */
+@font-face {
+    font-family: 'FanWunMing-TW-SB';
+    src: url('/fonts/FanWunMing-TW-SB.ttf');
+}
+
+/* ====== 繁体中文（TC）字体 ====== */
+/* 狮尾四季春繁体-Regular */
+@font-face {
+    font-family: 'SweiSpringCJKtc-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringCJKtc-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringCJKtc-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+/* 狮尾四季春繁体-Light */
+@font-face {
+    font-family: 'SweiSpringCJKtc-Light';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringCJKtc-Light.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringCJKtc-Light.woff') format('woff');
+    font-display: swap;
+}
+
+/* 狮尾四季春繁体加糖-Bold */
+@font-face {
+    font-family: 'SweiSpringSugarCJKtc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringSugarCJKtc-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringSugarCJKtc-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+/* ====== 简体中文（SC）字体 ====== */
+/* 狮尾四季春简体-Regular */
+@font-face {
+    font-family: 'SweiSpringCJKsc-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringCJKsc-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringCJKsc-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+/* 狮尾四季春简体-Light */
+@font-face {
+    font-family: 'SweiSpringCJKsc-Light';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringCJKsc-Light.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringCJKsc-Light.woff') format('woff');
+    font-display: swap;
+}
+
+/* 狮尾四季春简体加糖-Bold */
+@font-face {
+    font-family: 'SweiSpringSugarCJKsc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringSugarCJKsc-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringSugarCJKsc-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+/* ====== 日文（JP）字体 ====== */
+/* 狮尾四季春日文-Regular */
+@font-face {
+    font-family: 'SweiSpringCJKjp-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringCJKjp-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringCJKjp-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+/* 狮尾四季春日文-Light */
+@font-face {
+    font-family: 'SweiSpringCJKjp-Light';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringCJKjp-Light.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringCJKjp-Light.woff') format('woff');
+    font-display: swap;
+}
+
+/* 狮尾四季春日文加糖-Bold */
+@font-face {
+    font-family: 'SweiSpringSugarCJKjp-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringSugarCJKjp-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringSugarCJKjp-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+#friends-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.friend-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    height: 100px; /* 固定高度 */
+    padding: 25px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.friend-card:hover {
+    background: #f7f7f7;
+    transform: translateY(-3px);
+}
+
+.friend-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* 调整内边距 */
+    gap: 6px;
+}
+
+
+.friend-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 24px; /* 固定高度确保对齐 */
+}
+
+.friend-favicon {
+    width: 20px;  /* 固定大小为标准favicon尺寸 */
+    height: 20px;
+    object-fit: contain; /* 改用contain确保图标不变形 */
+    flex-shrink: 0; /* 防止图标被压缩 */
+}
+
+.friend-name {
+    font-size: 18px; /* 调整为与favicon相匹配的大小 */
+    font-weight: 500;
+    line-height: 16px; /* 确保文字垂直居中 */
+    font-family:'SweiSpringSugarCJKtc-Bold', 'Irohamaru'
+}
+
+.friend-desc {
+    font-size: 14px;
+    color: #6a6a6a;
+}
+
+.friend-avatar {
+    width: 63px;
+    height: 63px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-left: 15px;
+}
+
+.friend-favicon:not([src]), 
+.friend-favicon[src=""],
+.friend-avatar:not([src]), 
+.friend-avatar[src=""] {
+    display: none;
+}
+
+
+/* 浅色模式下的文字颜色 */
+html:not(.dark) .friend-name {
+    color: rgb(var(--color-neutral-700));
+}
+
+/* 深色模式下的文字颜色 */
+html.dark .friend-name {
+    color: rgb(var(--color-neutral-500));
+}
+
+/* 浅色模式下的卡片阴影 */
+html:not(.dark) .friend-card {
+    box-shadow: 0 4px 12px rgba(var(--color-neutral-200), 0.5),
+                0 0 1px rgba(var(--color-primary-300), 0.3);
+}
+
+html:not(.dark) .friend-card:hover {
+    box-shadow: 0 6px 16px rgba(var(--color-neutral-200), 0.6),
+                0 0 2px rgba(var(--color-primary-300), 0.4);
+}
+
+/* 深色模式下的卡片阴影 */
+html.dark .friend-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+                0 0 1px rgba(var(--color-primary-800), 0.3);
+}
+
+html.dark .friend-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4),
+                0 0 2px rgba(var(--color-primary-800), 0.4);
+}
