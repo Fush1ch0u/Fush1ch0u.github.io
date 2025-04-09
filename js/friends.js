@@ -137,11 +137,18 @@ function extractDescription(doc) {
 
 function extractFavicon(doc, siteBaseUrl, callback) {
     const faviconSelectors = [
-        "link[rel='icon'][sizes='16x16']",
+        // 优先选择SVG格式（矢量图，不模糊）
+        "link[rel='icon'][type='image/svg+xml']",
+        // 优先选择高分辨率版本（从大到小）
+        "link[rel='icon'][sizes='256x256']",
+        "link[rel='icon'][sizes='128x128']",
+        "link[rel='icon'][sizes='64x64']",
+        "link[rel='apple-touch-icon']", // 通常是60x60px或更高，常用于苹果设备
         "link[rel='icon'][sizes='32x32']",
+        "link[rel='icon'][sizes='16x16']",
+        // 通用的rel='icon'或'shortcut icon'
         "link[rel='icon']",
-        "link[rel='shortcut icon']",
-        "link[rel='apple-touch-icon']"
+        "link[rel='shortcut icon']"
     ];
 
     for (const selector of faviconSelectors) {
