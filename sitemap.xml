@@ -4,49 +4,55 @@
 
   <url>
     <loc>https://imasugu.cc/</loc>
-    <lastmod>2025-03-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-01T00:00:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://imasugu.cc/posts/blowfish-customization-note/</loc>
+    <lastmod>2025-05-01T00:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imasugu.cc/posts/</loc>
-    <lastmod>2025-03-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-01T00:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imasugu.cc/posts/blowfish-colorscheme/</loc>
-    <lastmod>2025-03-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-19T00:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imasugu.cc/posts/go-to-a-sports-medicine-doctor/</loc>
-    <lastmod>2025-02-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imasugu.cc/posts/rent-a-room/</loc>
-    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-31T00:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imasugu.cc/posts/Ivana-live-2024/</loc>
-    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-13T00:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imasugu.cc/posts/build-a-blog/install-hugo/</loc>
-    <lastmod>2024-06-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-13T00:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://imasugu.cc/about/</loc>
-    <lastmod>2024-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-12T00:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
