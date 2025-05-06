@@ -113,7 +113,7 @@
     "keywords": ["hugo","blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1668"
+    "wordCount": "1696"
   }]
   </script>
 
@@ -577,7 +577,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>1668 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">4 分鐘</span>
+  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>1696 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">4 分鐘</span>
   
 
   
@@ -681,7 +681,7 @@
     <li><a href="#指定hugo時區">指定Hugo時區</a></li>
     <li><a href="#自定義footer文字渲染修正">自定義footer文字&amp;渲染修正</a>
       <ul>
-        <li><a href="#修改configtoml">修改config.toml</a></li>
+        <li><a href="#修改hugotoml">修改hugo.toml</a></li>
         <li><a href="#修正標點符號的渲染">修正標點符號的渲染</a></li>
       </ul>
     </li>
@@ -706,7 +706,7 @@
     <li><a href="#指定hugo時區">指定Hugo時區</a></li>
     <li><a href="#自定義footer文字渲染修正">自定義footer文字&amp;渲染修正</a>
       <ul>
-        <li><a href="#修改configtoml">修改config.toml</a></li>
+        <li><a href="#修改hugotoml">修改hugo.toml</a></li>
         <li><a href="#修正標點符號的渲染">修正標點符號的渲染</a></li>
       </ul>
     </li>
@@ -954,19 +954,19 @@
 如要實現©符號前的文字自定義，則需要：</p>
 
 
-<h2 class="relative group">修改config.toml 
-    <div id="%E4%BF%AE%E6%94%B9configtoml" class="anchor"></div>
+<h2 class="relative group">修改hugo.toml 
+    <div id="%E4%BF%AE%E6%94%B9hugotoml" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9configtoml" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9hugotoml" aria-label="定位點">#</a>
     </span>        
     
 </h2>
 <p>我在 footer.html 中加了一句 copyright 的內容：</p>
 <pre tabindex="0"><code>東井 © 2025 · Please Don&#39;t Reblog or Repost Without Asking Permission
-</code></pre><p>要實現這樣的效果，只需要在 config.toml 文件末加一句如下代碼即可：</p>
+</code></pre><p>要實現這樣的效果，只需要在 博客文件夾/config/_default/hugo.toml 文件末加一句如下代碼即可：</p>
 <pre tabindex="0"><code>[params]
   copyright = &#34;博客名  &amp;copy; { year } · Please Don&#39;t Reblog or Repost Without Asking Permission&#34;
 </code></pre><p>這樣的話，year會自動替換為當前年份，其餘部分可以自定義。</p>
