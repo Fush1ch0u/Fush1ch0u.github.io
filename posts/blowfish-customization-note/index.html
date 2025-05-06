@@ -113,7 +113,7 @@
     "keywords": ["hugo","blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "988"
+    "wordCount": "1668"
   }]
   </script>
 
@@ -577,7 +577,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>988 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">2 分鐘</span>
+  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>1668 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">4 分鐘</span>
   
 
   
@@ -679,6 +679,12 @@
       </ul>
     </li>
     <li><a href="#指定hugo時區">指定Hugo時區</a></li>
+    <li><a href="#自定義footer文字渲染修正">自定義footer文字&amp;渲染修正</a>
+      <ul>
+        <li><a href="#修改configtoml">修改config.toml</a></li>
+        <li><a href="#修正標點符號的渲染">修正標點符號的渲染</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -698,6 +704,12 @@
       </ul>
     </li>
     <li><a href="#指定hugo時區">指定Hugo時區</a></li>
+    <li><a href="#自定義footer文字渲染修正">自定義footer文字&amp;渲染修正</a>
+      <ul>
+        <li><a href="#修改configtoml">修改config.toml</a></li>
+        <li><a href="#修正標點符號的渲染">修正標點符號的渲染</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -908,6 +920,90 @@
 在博客文件夾/config/_default/hugo.toml中加入下面這行代碼即可：</p>
 <pre tabindex="0"><code>timeZone = &#34;Asia/Shanghai&#34;
 </code></pre><p>當然也可以文章加時間戳，但我覺得沒必要，後面要顯示「最後編輯時間」時再修改。</p>
+<hr>
+
+
+<h1 class="relative group">自定義footer文字&amp;渲染修正 
+    <div id="%E8%87%AA%E5%AE%9A%E7%BE%A9footer%E6%96%87%E5%AD%97%E6%B8%B2%E6%9F%93%E4%BF%AE%E6%AD%A3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%87%AA%E5%AE%9A%E7%BE%A9footer%E6%96%87%E5%AD%97%E6%B8%B2%E6%9F%93%E4%BF%AE%E6%AD%A3" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>首先，原本 layouts/partials/footer.html 部分版權信息的代碼是這樣的：
+<details>
+    <summary>點我展開</summary>
+    <pre tabindex="0"><code>    {{/* Copyright */}}
+    {{ if .Site.Params.footer.showCopyright | default true }}
+    &lt;p class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      {{- with replace .Site.Params.copyright &#34;{ year }&#34; now.Year  }}
+      {{ . | markdownify }} 
+      {{- else }}
+      &amp;copy;
+      {{ now.Format &#34;2006&#34; }}
+      {{ .Site.Params.Author.name | markdownify }} 
+      {{- end }}
+    &lt;/p&gt;
+    {{ end }}
+</code></pre>
+</details><br>
+一般情況下，如果什麼都不寫，footer區域會自動顯示為<code>© 2025</code>。<br>
+如要實現©符號前的文字自定義，則需要：</p>
+
+
+<h2 class="relative group">修改config.toml 
+    <div id="%E4%BF%AE%E6%94%B9configtoml" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9configtoml" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>我在 footer.html 中加了一句 copyright 的內容：</p>
+<pre tabindex="0"><code>東井 © 2025 · Please Don&#39;t Reblog or Repost Without Asking Permission
+</code></pre><p>要實現這樣的效果，只需要在 config.toml 文件末加一句如下代碼即可：</p>
+<pre tabindex="0"><code>[params]
+  copyright = &#34;博客名  &amp;copy; { year } · Please Don&#39;t Reblog or Repost Without Asking Permission&#34;
+</code></pre><p>這樣的話，year會自動替換為當前年份，其餘部分可以自定義。</p>
+<p><strong>新的問題出現：</strong><br>
+<code>Don't</code>的單引號一度顯示為全角符號的方括號<code>』</code>，怎麼修改都找不到位置，讓我百思不得其解。<br>
+後來我想了一下，大概是因為我的<code>languages.zh.toml</code>文件中設置了<code>isoCode = &quot;zh&quot;</code>，又或者是因為我的字體使用順序是繁體&gt;簡體&gt;英文導致默認使用了繁體標點（我已實驗過，字體是可以正常顯示英文符號的），總之結論像是 markdown 渲染的時候莫名其妙把我的標點符號給替換了。</p>
+
+
+<h2 class="relative group">修正標點符號的渲染 
+    <div id="%E4%BF%AE%E6%AD%A3%E6%A8%99%E9%BB%9E%E7%AC%A6%E8%99%9F%E7%9A%84%E6%B8%B2%E6%9F%93" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%AD%A3%E6%A8%99%E9%BB%9E%E7%AC%A6%E8%99%9F%E7%9A%84%E6%B8%B2%E6%9F%93" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p><strong>解決方式有兩種：</strong></p>
+<ol>
+<li>
+<p><strong>用 html 實寫單引號</strong></p>
+<pre tabindex="0"><code>博客名 © 2025 · Please Don&amp;#39;t Reblog or Repost Without Asking Permission
+</code></pre><p>這樣渲染之後應該就ok了。</p>
+</li>
+<li>
+<p><strong>修改 Markdownify 屬性</strong><br>
+涉及到單引號的部分都這麼一個個修改也太麻煩，還可以嘗試的另一條路是：<br>
+針對版權信息部分去除<code>markdownify</code>，修改為<code>safeHTML</code>，讓他別這麼自動轉換了。</p>
+<pre tabindex="0"><code>{{- with replace .Site.Params.copyright &#34;{ year }&#34; now.Year }}
+ {{ . | markdownify }}  &lt;!-- 这里改成 safeHTML --&gt;
+ {{- else }}
+ © {{ now.Format &#34;2006&#34; }} {{ .Site.Params.Author.name | markdownify }}  &lt;!-- 这里也改成 safeHTML --&gt;
+ {{- end }}
+</code></pre></li>
+</ol>
+<p>這樣就可以確保自定義的footer文字和渲染都是正確的了。</p>
 
           
           
