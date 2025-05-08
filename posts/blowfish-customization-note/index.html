@@ -28,10 +28,8 @@
   
   
   
-  
-  
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.09dac0c6e699ccff0771bfc249cb1d87198ed696237da343959964e06a7e7a56fcd3fad1b1752f6f8b4e292e0963caa1b204932d99576224ae93dda8a52e1f47.css"
-    integrity="sha512-CdrAxuaZzP8Hcb/CScsdhxmO1pYjfaNDlZlk4Gp&#43;elb80/rRsXUvb4tOKS4JY8qhsgSTLZlXYiSuk92opS4fRw==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.6e4ae876c10a92ccc0d85b6106b743188d216b7ca31d1b8c5d411779b63008f0b2e4d4b245820a5f0fb24b8633c72d2de6071ebbaf0623811ff67f4635e0d39a.css"
+    integrity="sha512-bkrodsEKkszA2FthBrdDGI0ha3yjHRuMXUEXebYwCPCy5NSyRYIKXw&#43;yS4Yzxy0t5gceu68GI4Ef9n9GNeDTmg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -113,7 +111,7 @@
     "keywords": ["hugo","blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1696"
+    "wordCount": "2395"
   }]
   </script>
 
@@ -153,6 +151,11 @@
 
 
   
+  
+  
+
+<link rel="stylesheet" href="/css/syntax-light.css">
+<link rel="stylesheet" href="/css/syntax-dark.css">
   
   <meta name="theme-color"/>
   
@@ -577,7 +580,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>1696 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">4 分鐘</span>
+  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>2395 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">5 分鐘</span>
   
 
   
@@ -685,6 +688,8 @@
         <li><a href="#修正標點符號的渲染">修正標點符號的渲染</a></li>
       </ul>
     </li>
+    <li><a href="#代碼塊設置為macos風格">代碼塊設置為MacOS風格</a></li>
+    <li><a href="#代碼塊文本高亮">代碼塊文本高亮</a></li>
   </ul>
 </nav>
   </div>
@@ -710,6 +715,8 @@
         <li><a href="#修正標點符號的渲染">修正標點符號的渲染</a></li>
       </ul>
     </li>
+    <li><a href="#代碼塊設置為macos風格">代碼塊設置為MacOS風格</a></li>
+    <li><a href="#代碼塊文本高亮">代碼塊文本高亮</a></li>
   </ul>
 </nav>
   </div>
@@ -867,34 +874,35 @@
 <li>用 css 來統一修改顏色及其他樣式。</li>
 </ol>
 <p>接下來在<strong>你的博客文件夾/assets/css/custom.css</strong> 中添加以下代碼：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/* 修改 外链及icon 相关颜色 */
-</span></span><span class="line"><span class="cl">/* 外链图标链接整体样式 */
-</span></span><span class="line"><span class="cl">.external-link <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    text-decoration: none<span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">  .external-link:hover <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    color: rgb<span class="o">(</span>var<span class="o">(</span>--color-neutral-300<span class="o">))</span><span class="p">;</span>/* 浅色模式 */
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
-</span></span><span class="line"><span class="cl">  html.dark .external-link:hover <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    color: rgb<span class="o">(</span>var<span class="o">(</span>--color-neutral-200<span class="o">))</span><span class="p">;</span>/* 深色模式 */
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* 修改 外链及icon 相关颜色 */</span>
+</span></span><span class="line"><span class="cl"><span class="c">/* 外链图标链接整体样式 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">external-link</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">external-link</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-300</span><span class="p">));</span><span class="c">/* 浅色模式 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">html</span><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">external-link</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-200</span><span class="p">));</span><span class="c">/* 深色模式 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  /* 外链图标本体对齐 + 间距 */
-</span></span><span class="line"><span class="cl">  .external-icon <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    display: inline-block<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    margin-left: -0.08em<span class="p">;</span> /* 控制图标和外链的间距 */
-</span></span><span class="line"><span class="cl">    line-height: 1<span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* 外链图标本体对齐 + 间距 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">external-icon</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-left</span><span class="p">:</span> <span class="mf">-0.08</span><span class="kt">em</span><span class="p">;</span> <span class="c">/* 控制图标和外链的间距 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">line-height</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  /* SVG 大小和颜色适配文字 */
-</span></span><span class="line"><span class="cl">  .external-icon-svg <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    width: 0.8em<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    height: 0.8em<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    fill: currentColor<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    transition: fill 0.2s ease<span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="o">}</span>  
+</span></span><span class="line"><span class="cl">  <span class="c">/* SVG 大小和颜色适配文字 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">external-icon-svg</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mf">0.8</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mf">0.8</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fill</span><span class="p">:</span> <span class="kc">currentColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">transition</span><span class="p">:</span> <span class="kc">fill</span> <span class="mf">0.2</span><span class="kt">s</span> <span class="kc">ease</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>  
 </span></span></code></pre></div><p>我這裡的兩個顏色值是根據自己的主題配色來的，如果讀者朋友有自己的配色方案，改color屬性即可。<br>
-博客整體配色方案的更改可見另一篇博文：<a class="external-link" href="https://imasugu.cc/posts/blowfish-colorscheme/" target="_blank" rel="noopener"><strong>Blog｜更改Hugo Blowfish主題配色</strong>
+博客整體配色方案的更改可見另一篇博文：<br>
+<a class="external-link" href="https://imasugu.cc/posts/blowfish-colorscheme/" target="_blank" rel="noopener"><strong>Blog｜更改Hugo Blowfish主題配色</strong>
     <span class="external-icon">
       <svg class="external-icon-svg" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="m13 3l3.293 3.293l-7 7l1.414 1.414l7-7L21 11V3z"/>
@@ -918,8 +926,8 @@
 </h1>
 <p>Hugo 默認是 UTC 時間而不是東八區時間，有時候寫了文章會被hugo判定文章來自「未來」，所以不會顯示在文章列表裡。
 在博客文件夾/config/_default/hugo.toml中加入下面這行代碼即可：</p>
-<pre tabindex="0"><code>timeZone = &#34;Asia/Shanghai&#34;
-</code></pre><p>當然也可以文章加時間戳，但我覺得沒必要，後面要顯示「最後編輯時間」時再修改。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">timeZone</span> <span class="o">=</span> <span class="s2">&#34;Asia/Shanghai&#34;</span>
+</span></span></code></pre></div><p>當然也可以文章加時間戳，但我覺得沒必要，後面要顯示「最後編輯時間」時再修改。</p>
 <hr>
 
 
@@ -936,19 +944,19 @@
 <p>首先，原本 layouts/partials/footer.html 部分版權信息的代碼是這樣的：
 <details>
     <summary>點我展開</summary>
-    <pre tabindex="0"><code>    {{/* Copyright */}}
-    {{ if .Site.Params.footer.showCopyright | default true }}
-    &lt;p class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-      {{- with replace .Site.Params.copyright &#34;{ year }&#34; now.Year  }}
-      {{ . | markdownify }} 
-      {{- else }}
-      &amp;copy;
-      {{ now.Format &#34;2006&#34; }}
-      {{ .Site.Params.Author.name | markdownify }} 
-      {{- end }}
-    &lt;/p&gt;
-    {{ end }}
-</code></pre>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">    {{/* Copyright */}}
+</span></span><span class="line"><span class="cl">    {{ if .Site.Params.footer.showCopyright | default true }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      {{- with replace .Site.Params.copyright &#34;{ year }&#34; now.Year  }}
+</span></span><span class="line"><span class="cl">      {{ . | markdownify }} 
+</span></span><span class="line"><span class="cl">      {{- else }}
+</span></span><span class="line"><span class="cl">      <span class="ni">&amp;copy;</span>
+</span></span><span class="line"><span class="cl">      {{ now.Format &#34;2006&#34; }}
+</span></span><span class="line"><span class="cl">      {{ .Site.Params.Author.name | markdownify }} 
+</span></span><span class="line"><span class="cl">      {{- end }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span></code></pre></div>
 </details><br>
 一般情況下，如果什麼都不寫，footer區域會自動顯示為<code>© 2025</code>。<br>
 如要實現©符號前的文字自定義，則需要：</p>
@@ -966,10 +974,42 @@
 </h2>
 <p>我在 footer.html 中加了一句 copyright 的內容：</p>
 <pre tabindex="0"><code>東井 © 2025 · Please Don&#39;t Reblog or Repost Without Asking Permission
-</code></pre><p>要實現這樣的效果，只需要在 博客文件夾/config/_default/hugo.toml 文件末加一句如下代碼即可：</p>
-<pre tabindex="0"><code>[params]
-  copyright = &#34;博客名  &amp;copy; { year } · Please Don&#39;t Reblog or Repost Without Asking Permission&#34;
-</code></pre><p>這樣的話，year會自動替換為當前年份，其餘部分可以自定義。</p>
+</code></pre><p>要實現這樣的效果，只需要在 博客文件夾/config/_default/params.toml 文件末加一句如下代碼即可：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># 修改版权信息</span>
+</span></span><span class="line"><span class="cl"><span class="nx">copyright</span> <span class="p">=</span> <span class="s2">&#34;網站名稱  &amp;copy; { year } · Please Don&#39;t Reblog or Repost Without Asking Permission&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">description</span> <span class="p">=</span> <span class="s2">&#34;網站描述&#34;</span>
+</span></span></code></pre></div><p>year會自動替換為當前年份，其他部分均可以自定義。
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >這裡不加在 hugo.toml 是為了方便管理，hugo.toml 是 hugo 讀取的內容， 而針對主題 Blowfish的修改通過對 params.toml實現。</span>
+</div>
+</p>
 <p><strong>新的問題出現：</strong><br>
 <code>Don't</code>的單引號一度顯示為全角符號的方括號<code>』</code>，怎麼修改都找不到位置，讓我百思不得其解。<br>
 後來我想了一下，大概是因為我的<code>languages.zh.toml</code>文件中設置了<code>isoCode = &quot;zh&quot;</code>，又或者是因為我的字體使用順序是繁體&gt;簡體&gt;英文導致默認使用了繁體標點（我已實驗過，字體是可以正常顯示英文符號的），總之結論像是 markdown 渲染的時候莫名其妙把我的標點符號給替換了。</p>
@@ -996,14 +1036,129 @@
 <p><strong>修改 Markdownify 屬性</strong><br>
 涉及到單引號的部分都這麼一個個修改也太麻煩，還可以嘗試的另一條路是：<br>
 針對版權信息部分去除<code>markdownify</code>，修改為<code>safeHTML</code>，讓他別這麼自動轉換了。</p>
-<pre tabindex="0"><code>{{- with replace .Site.Params.copyright &#34;{ year }&#34; now.Year }}
- {{ . | markdownify }}  &lt;!-- 这里改成 safeHTML --&gt;
- {{- else }}
- © {{ now.Format &#34;2006&#34; }} {{ .Site.Params.Author.name | markdownify }}  &lt;!-- 这里也改成 safeHTML --&gt;
- {{- end }}
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{- with replace .Site.Params.copyright &#34;{ year }&#34; now.Year }}
+</span></span><span class="line"><span class="cl"> {{ . | markdownify }}  <span class="c">&lt;!-- 这里改成 safeHTML --&gt;</span>
+</span></span><span class="line"><span class="cl"> {{- else }}
+</span></span><span class="line"><span class="cl"> © {{ now.Format &#34;2006&#34; }} {{ .Site.Params.Author.name | markdownify }}  <span class="c">&lt;!-- 这里也改成 safeHTML --&gt;</span>
+</span></span><span class="line"><span class="cl"> {{- end }}
+</span></span></code></pre></div></li>
 </ol>
 <p>這樣就可以確保自定義的footer文字和渲染都是正確的了。</p>
+<hr>
+
+
+<h1 class="relative group">代碼塊設置為MacOS風格 
+    <div id="%E4%BB%A3%E7%A2%BC%E5%A1%8A%E8%A8%AD%E7%BD%AE%E7%82%BAmacos%E9%A2%A8%E6%A0%BC" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BB%A3%E7%A2%BC%E5%A1%8A%E8%A8%AD%E7%BD%AE%E7%82%BAmacos%E9%A2%A8%E6%A0%BC" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>還是參考了Kyo老師的博文 <a class="external-link" href="https://thirdshire.com/hugo-stack-renovation-part-three/#macos-%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97" target="_blank" rel="noopener"><strong>Hugo Stack主题装修笔记Part3</strong>
+    <span class="external-icon">
+      <svg class="external-icon-svg" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="m13 3l3.293 3.293l-7 7l1.414 1.414l7-7L21 11V3z"/>
+        <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"/>
+      </svg>
+    </span>
+</a>
+，感謝。<br>
+先開始一直報錯沒想到如此簡單就適配了Blowfish。效果見下方折疊區。<br>
+將如下代碼插入到/custom.css後面：
+<details>
+    <summary>點我展開</summary>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"> <span class="c">/* 代码块容器样式 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">highlight</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-left</span><span class="p">:</span> <span class="mi">-5</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">-10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">1</span><span class="kt">px</span> <span class="mi">3</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* 添加 macOS 风格的标题栏 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">highlight</span><span class="p">::</span><span class="nd">before</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="mh">#f0f0f0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ddd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">/* 深色模式下的标题栏样式 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">highlight</span><span class="p">::</span><span class="nd">before</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="mh">#0e220f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#404040</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">/* 添加控制按钮 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">highlight</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">top</span><span class="p">:</span> <span class="mi">9</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">left</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ff5f56</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mh">#ffbd2e</span><span class="p">,</span> <span class="mi">40</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mh">#27c93f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">z-index</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c">/* 代码块内容区域样式 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">highlight</span> <span class="nt">pre</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">prose</span> <span class="p">.</span><span class="nc">chroma</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* 代码块复制按钮样式 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">copy-button</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">highlight</span><span class="p">:</span><span class="nd">hover</span> <span class="p">.</span><span class="nc">copyCodeButton</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">opacity</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div>
+</details>
+做法稍微有些不同是我這裡直接插入css代碼來做那三個按鈕了。<br>
+另外就是為了適配當前深色模式下的博客配色，深色模式下的MacOS标题栏顏色也有加深，可根據實際情況進行修改。</p>
+<hr>
+
+
+<h1 class="relative group">代碼塊文本高亮 
+    <div id="%E4%BB%A3%E7%A2%BC%E5%A1%8A%E6%96%87%E6%9C%AC%E9%AB%98%E4%BA%AE" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BB%A3%E7%A2%BC%E5%A1%8A%E6%96%87%E6%9C%AC%E9%AB%98%E4%BA%AE" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>很多其他hugo主題都內置了代碼高亮，而Blowfish 本身的高亮有點讓人迷茫。我個人是沒找到能否換配色方案，所以就自行更換了。<br>
+定位至博客所在文件夾，執行如下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 生成亮色主题样式</span>
+</span></span><span class="line"><span class="cl">hugo gen chromastyles --style<span class="o">=</span>github &gt; assets/css/syntax-light.css
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成暗色主题样式</span>
+</span></span><span class="line"><span class="cl">hugo gen chromastyles --style<span class="o">=</span>monokai &gt; assets/css/syntax-dark.css
+</span></span></code></pre></div><p>然後在layouts/partials文件夾下新建extend-head.html，輸入以下內容，引入這兩個代碼塊高亮方案：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ $syntaxLight := resources.Get &#34;css/syntax-light.css&#34; }}
+</span></span><span class="line"><span class="cl">{{ $syntaxDark := resources.Get &#34;css/syntax-dark.css&#34; }}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $syntaxLight.RelPermalink }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $syntaxDark.RelPermalink }}&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>刷新博客即可。<br>
+當然也可以把兩個css放在static/css下，引用就不需要這麼複雜了。</p>
 
           
           
