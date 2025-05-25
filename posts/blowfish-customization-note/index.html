@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh" dir="ltr" class="scroll-smooth" data-default-appearance="light"
-  data-auto-appearance="false"><head>
+  data-auto-appearance="true"><head>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="zh" />
@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.6e4ae876c10a92ccc0d85b6106b743188d216b7ca31d1b8c5d411779b63008f0b2e4d4b245820a5f0fb24b8633c72d2de6071ebbaf0623811ff67f4635e0d39a.css"
-    integrity="sha512-bkrodsEKkszA2FthBrdDGI0ha3yjHRuMXUEXebYwCPCy5NSyRYIKXw&#43;yS4Yzxy0t5gceu68GI4Ef9n9GNeDTmg==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.b1e56384c637239d98c4be8eecc77141aed7ecdff85f63ed08d8357f6cb4fdff2865e8e130a1f1b1800dff4d0f01566095b9359c95d347339ce8b655853b7820.css"
+    integrity="sha512-seVjhMY3I52YxL6O7MdxQa7X7N/4X2PtCNg1f2y0/f8oZejhMKHxsYAN/00PAVZglbk1nJXTRzOc6LZVhTt4IA==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -111,7 +111,7 @@
     "keywords": ["hugo","blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2395"
+    "wordCount": "4396"
   }]
   </script>
 
@@ -156,6 +156,8 @@
 
 <link rel="stylesheet" href="/css/syntax-light.css">
 <link rel="stylesheet" href="/css/syntax-dark.css">
+
+
   
   <meta name="theme-color"/>
   
@@ -577,10 +579,61 @@
 
 
 
+
+
+  
+
+
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>2395 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">5 分鐘</span>
+  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>4396 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">9 分鐘</span><span class="px-2 text-primary-500">&middot;</span><span class="inline-flex items-center">
+  <button
+    id="langToggleBtn"
+    class="lang-btn"
+    title="切換語言"
+    aria-label="切換語言"
+  >
+    <span id="langLabel">語言</span>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="translate-icon">
+      <path d="m5 8 6 6" />
+      <path d="m4 14 6-6 2-3" />
+      <path d="M2 5h12" />
+      <path d="M7 2h1" />
+      <path d="m22 22-5-10-5 10" />
+      <path d="M14 18h6" />
+    </svg>
+  </button>
+</span>
+
+<style>
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: 0.5rem;
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+  cursor: pointer;
+}
+[data-dark-mode] .lang-btn {
+  background: var(--color-neutral-800);
+  color: var(--color-neutral-100);
+  border-color: var(--color-neutral-600);
+}
+.lang-btn:hover {
+  background: var(--color-neutral-200);
+}
+[data-dark-mode] .lang-btn:hover {
+  background: var(--color-neutral-700);
+}
+</style>
   
 
   
@@ -690,6 +743,7 @@
     </li>
     <li><a href="#代碼塊設置為macos風格">代碼塊設置為MacOS風格</a></li>
     <li><a href="#代碼塊文本高亮">代碼塊文本高亮</a></li>
+    <li><a href="#給文章增加簡繁切換按鈕">給文章增加簡繁切換按鈕</a></li>
   </ul>
 </nav>
   </div>
@@ -717,6 +771,7 @@
     </li>
     <li><a href="#代碼塊設置為macos風格">代碼塊設置為MacOS風格</a></li>
     <li><a href="#代碼塊文本高亮">代碼塊文本高亮</a></li>
+    <li><a href="#給文章增加簡繁切換按鈕">給文章增加簡繁切換按鈕</a></li>
   </ul>
 </nav>
   </div>
@@ -1007,12 +1062,13 @@
   <span
     
       class="dark:text-neutral-300"
-    >這裡不加在 hugo.toml 是為了方便管理，hugo.toml 是 hugo 讀取的內容， 而針對主題 Blowfish的修改通過對 params.toml實現。</span>
+    >這裡不加在 hugo.toml 中是為了方便管理，hugo.toml 是 hugo 讀取的內容， 而針對主題 Blowfish的修改通過 params.toml實現。</span>
 </div>
 </p>
 <p><strong>新的問題出現：</strong><br>
 <code>Don't</code>的單引號一度顯示為全角符號的方括號<code>』</code>，怎麼修改都找不到位置，讓我百思不得其解。<br>
-後來我想了一下，大概是因為我的<code>languages.zh.toml</code>文件中設置了<code>isoCode = &quot;zh&quot;</code>，又或者是因為我的字體使用順序是繁體&gt;簡體&gt;英文導致默認使用了繁體標點（我已實驗過，字體是可以正常顯示英文符號的），總之結論像是 markdown 渲染的時候莫名其妙把我的標點符號給替換了。</p>
+後來我想了一下，大概是因為我的<code>languages.zh.toml</code>文件中設置了<code>isoCode = &quot;zh&quot;</code>，又或者是因為我的字體使用順序是繁體&gt;簡體&gt;英文導致默認使用了繁體標點（我已實驗過，字體是可以正常顯示英文符號的），總之結論像是 markdown 渲染的時候莫名其妙把我的標點符號給替換了。<br>
+那麼接下來就需要：</p>
 
 
 <h2 class="relative group">修正標點符號的渲染 
@@ -1067,7 +1123,7 @@
 </a>
 ，感謝。<br>
 先開始一直報錯沒想到如此簡單就適配了Blowfish。效果見下方折疊區。<br>
-將如下代碼插入到/custom.css後面：
+將如下代碼插入到/custom.css後面：<br>
 <details>
     <summary>點我展開</summary>
     <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"> <span class="c">/* 代码块容器样式 */</span>
@@ -1129,8 +1185,8 @@
 </span></span><span class="line"><span class="cl">    <span class="k">opacity</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span></code></pre></div>
-</details>
-做法稍微有些不同是我這裡直接插入css代碼來做那三個按鈕了。<br>
+</details></p>
+<p>做法稍微有些不同是我這裡直接插入css代碼來做那三個按鈕了。<br>
 另外就是為了適配當前深色模式下的博客配色，深色模式下的MacOS标题栏顏色也有加深，可根據實際情況進行修改。</p>
 <hr>
 
@@ -1159,6 +1215,316 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $syntaxDark.RelPermalink }}&#34;</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>刷新博客即可。<br>
 當然也可以把兩個css放在static/css下，引用就不需要這麼複雜了。</p>
+<hr>
+
+
+<h1 class="relative group">給文章增加簡繁切換按鈕 
+    <div id="%E7%B5%A6%E6%96%87%E7%AB%A0%E5%A2%9E%E5%8A%A0%E7%B0%A1%E7%B9%81%E5%88%87%E6%8F%9B%E6%8C%89%E9%88%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%B5%A6%E6%96%87%E7%AB%A0%E5%A2%9E%E5%8A%A0%E7%B0%A1%E7%B9%81%E5%88%87%E6%8F%9B%E6%8C%89%E9%88%95" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>這個功能也是看似無用但我一直想加。效果大概如圖：<br>
+
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./sample.png" alt="簡繁切換按鈕" />
+      
+    </figure>
+<br>
+原意是放在文章信息旁邊，這樣點擊按鈕之後就會將整個頁面切換為簡體。再點一下即可切換回繁體。<br>
+轉換也不僅限於繁體頁面，若是簡體中文書寫的頁面也會自動識別，確定為簡體中文後按鈕就會顯示&quot;簡體中文&quot;。</p>
+<p><strong>bug也有：</strong></p>
+<ul>
+<li>我希望內容是簡體時，按鈕顯示「简体中文」而非繁體，但這是寫死在blowfish模版裡的，我主題語言指定是繁體，這裡就註定是繁體（笑）。</li>
+<li>twikoo部分字詞轉換不完整（e.g. 暱稱/暱称）</li>
+</ul>
+<p><strong>分為幾個步驟。</strong></p>
+<ol>
+<li>在 layouts/partials/basic.html 中新增一段代碼。因為要把按鈕放在文章信息欄，所以加在那一長串 partials的後面。我是加在了zen-mode這一段的後面</li>
+</ol>
+<pre tabindex="0"><code>{{ if and (eq $scope &#34;single&#34;) (.Params.showZenMode | default (.Site.Params.article.showZenMode | default false)) }}
+{{ $meta.Add &#34;partials&#34; (slice (partial &#34;meta/zen-mode.html&#34; .)) }}
+{{ end }}
+</code></pre><p>在這段代碼後新增如下代碼：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--新增简繁切换功能--&gt;</span>
+</span></span><span class="line"><span class="cl">{{ if eq $scope &#34;single&#34; }}
+</span></span><span class="line"><span class="cl">  {{ $meta.Add &#34;partials&#34; (slice (partial &#34;meta/language-switch.html&#34; .)) }}
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>在 layouts/partials/meta 文件夹下新建 language-switch.html，代码如下：<br>
+<details>
+    <summary>點我展開</summary>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;inline-flex items-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">button</span>
+</span></span><span class="line"><span class="cl">    <span class="na">id</span><span class="o">=</span><span class="s">&#34;langToggleBtn&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">class</span><span class="o">=</span><span class="s">&#34;lang-btn&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">title</span><span class="o">=</span><span class="s">&#34;切換語言&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;切換語言&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;langLabel&#34;</span><span class="p">&gt;</span>語言<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span><span class="c">&lt;!-- 临时 placeholder，由 JS 替换 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 翻译图标 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#34;http://www.w3.org/2000/svg&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;1em&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;1em&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;0 0 24 24&#34;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#34;none&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">stroke</span><span class="o">=</span><span class="s">&#34;currentColor&#34;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#34;2&#34;</span> <span class="na">stroke-linecap</span><span class="o">=</span><span class="s">&#34;round&#34;</span> <span class="na">stroke-linejoin</span><span class="o">=</span><span class="s">&#34;round&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">class</span><span class="o">=</span><span class="s">&#34;translate-icon&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;m5 8 6 6&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;m4 14 6-6 2-3&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M2 5h12&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M7 2h1&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;m22 22-5-10-5 10&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M14 18h6&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">lang-btn</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">gap</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">rem</span> <span class="mf">0.8</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-size</span><span class="p">:</span> <span class="mf">0.875</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-300</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-radius</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-900</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="nt">data-dark-mode</span><span class="o">]</span> <span class="p">.</span><span class="nc">lang-btn</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-800</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">lang-btn</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="nt">data-dark-mode</span><span class="o">]</span> <span class="p">.</span><span class="nc">lang-btn</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-700</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></div>
+</details></p>
+</li>
+<li>
+<p>在 layouts/partials/footer.html 結尾的</footer>前加入一段：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--增加opencc库--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 加载 opencc-js --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 加载你的 lang-toggle.js --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/js/lang-toggle.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><ol start="4">
+<li>在 static/js 下新建 language-toggle.js 文件，代碼如下：<br>
+<details>
+    <summary>點我展開</summary>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl">  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;DOMContentLoaded&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;langToggleBtn&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">label</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;langLabel&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">btn</span> <span class="o">||</span> <span class="o">!</span><span class="nx">label</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">langMap</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">s</span><span class="o">:</span> <span class="s2">&#34;cn&#34;</span><span class="p">,</span> <span class="nx">t</span><span class="o">:</span> <span class="s2">&#34;hk&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">originalLang</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">;</span> <span class="c1">// 默认简体
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">currentLang</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">detectInitialLang</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerText</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">simplifiedChars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;个&#39;</span><span class="p">,</span> <span class="s1">&#39;简&#39;</span><span class="p">,</span> <span class="s1">&#39;么&#39;</span><span class="p">,</span> <span class="s1">&#39;国&#39;</span><span class="p">,</span> <span class="s1">&#39;这&#39;</span><span class="p">,</span> <span class="s1">&#39;没&#39;</span><span class="p">,</span> <span class="s1">&#39;图&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">traditionalChars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;個&#39;</span><span class="p">,</span> <span class="s1">&#39;簡&#39;</span><span class="p">,</span> <span class="s1">&#39;麼&#39;</span><span class="p">,</span> <span class="s1">&#39;國&#39;</span><span class="p">,</span> <span class="s1">&#39;這&#39;</span><span class="p">,</span> <span class="s1">&#39;沒&#39;</span><span class="p">,</span> <span class="s1">&#39;圖&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">simplifiedCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">traditionalCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">simplifiedChars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kr">char</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="kr">char</span><span class="p">))</span> <span class="nx">simplifiedCount</span><span class="o">++</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">traditionalChars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kr">char</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="kr">char</span><span class="p">))</span> <span class="nx">traditionalCount</span><span class="o">++</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">traditionalCount</span> <span class="o">&gt;=</span> <span class="nx">simplifiedCount</span> <span class="o">?</span> <span class="s1">&#39;t&#39;</span> <span class="o">:</span> <span class="s1">&#39;s&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">updateButtonUI</span><span class="p">(</span><span class="nx">lang</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">lang</span> <span class="o">===</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">label</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">&#34;简体中文&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">btn</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">&#34;当前为简体中文，切换为繁体中文&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">label</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">&#34;繁體中文&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">btn</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">&#34;當前為繁體中文，切換為簡體中文&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ✅ 延迟语言检测，确保内容渲染完成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">originalLang</span> <span class="o">=</span> <span class="nx">detectInitialLang</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">currentLang</span> <span class="o">=</span> <span class="nx">originalLang</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">updateButtonUI</span><span class="p">(</span><span class="nx">currentLang</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="mi">200</span><span class="p">);</span> <span class="c1">// 200ms 延迟，一般足够等待 DOM 完全渲染
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// ✅ 转换内容逻辑
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">textNodes</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">walker</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTreeWalker</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">SHOW_TEXT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">acceptNode</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">el</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">el</span><span class="p">)</span> <span class="k">return</span> <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">FILTER_ACCEPT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 避免转换语言按钮上的所有文本
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;#langToggleBtn&#39;</span><span class="p">)</span> <span class="o">||</span> 
+</span></span><span class="line"><span class="cl">            <span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;#langLabel&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">FILTER_REJECT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// 排除网站标题
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;.logo&#39;</span><span class="p">)</span> <span class="o">||</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;a[href=&#34;/&#34;]&#39;</span><span class="p">)</span> <span class="o">||</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;meta[property=&#34;og:title&#34;]&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">FILTER_REJECT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">FILTER_ACCEPT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">walker</span><span class="p">.</span><span class="nx">nextNode</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">textNodes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">node</span><span class="o">:</span> <span class="nx">walker</span><span class="p">.</span><span class="nx">currentNode</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">originalText</span><span class="o">:</span> <span class="nx">walker</span><span class="p">.</span><span class="nx">currentNode</span><span class="p">.</span><span class="nx">textContent</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">convertedText</span><span class="o">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;click&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">currentLang</span> <span class="o">===</span> <span class="nx">originalLang</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">targetLang</span> <span class="o">=</span> <span class="nx">originalLang</span> <span class="o">===</span> <span class="s1">&#39;s&#39;</span> <span class="o">?</span> <span class="s1">&#39;t&#39;</span> <span class="o">:</span> <span class="s1">&#39;s&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">converter</span> <span class="o">=</span> <span class="nx">OpenCC</span><span class="p">.</span><span class="nx">Converter</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">from</span><span class="o">:</span> <span class="nx">langMap</span><span class="p">[</span><span class="nx">originalLang</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">to</span><span class="o">:</span> <span class="nx">langMap</span><span class="p">[</span><span class="nx">targetLang</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">textNodes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">convertedText</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">item</span><span class="p">.</span><span class="nx">convertedText</span> <span class="o">=</span> <span class="nx">converter</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">originalText</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">item</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">item</span><span class="p">.</span><span class="nx">convertedText</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">currentLang</span> <span class="o">=</span> <span class="nx">targetLang</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">textNodes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">item</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">item</span><span class="p">.</span><span class="nx">originalText</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">currentLang</span> <span class="o">=</span> <span class="nx">originalLang</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nx">updateButtonUI</span><span class="p">(</span><span class="nx">currentLang</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="mi">300</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div>
+</details></li>
+</ol>
+<p><strong>注意點</strong></p>
+<ul>
+<li>
+<p>標題簡繁體意思大有不同，所以此處沒有把標題加入轉換範圍；</p>
+</li>
+<li>
+<p>個人習慣不喜歡台灣中文下的一些表達方式(e.g. 自行车vs腳踏車）所以選了hk，喜歡台灣中文的話將 <code>const langMap = { s: &quot;cn&quot;, t: &quot;hk&quot; };</code>這裡的hk改為tw即可大概就可以了。</p>
+</li>
+<li>
+<p>導航菜單也會隨之進行簡繁體轉化，如果博客標題+導航菜單均不需要變化，那也可以照抄下面這個js文件（直接替換即可）：</p>
+<details>
+    <summary>點我展開</summary>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;DOMContentLoaded&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;langToggleBtn&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">label</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;langLabel&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">btn</span> <span class="o">||</span> <span class="o">!</span><span class="nx">label</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">langMap</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">s</span><span class="o">:</span> <span class="s2">&#34;cn&#34;</span><span class="p">,</span> <span class="nx">t</span><span class="o">:</span> <span class="s2">&#34;hk&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 延迟执行，确保所有 DOM 元素加载完毕
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">contentEl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;#main-content&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">contentEl</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 语言初始检测逻辑
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">detectInitialLang</span> <span class="o">=</span> <span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">simplifiedChars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;个&#39;</span><span class="p">,</span> <span class="s1">&#39;简&#39;</span><span class="p">,</span> <span class="s1">&#39;么&#39;</span><span class="p">,</span> <span class="s1">&#39;国&#39;</span><span class="p">,</span> <span class="s1">&#39;这&#39;</span><span class="p">,</span> <span class="s1">&#39;没&#39;</span><span class="p">,</span> <span class="s1">&#39;图&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">traditionalChars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;個&#39;</span><span class="p">,</span> <span class="s1">&#39;簡&#39;</span><span class="p">,</span> <span class="s1">&#39;麼&#39;</span><span class="p">,</span> <span class="s1">&#39;國&#39;</span><span class="p">,</span> <span class="s1">&#39;這&#39;</span><span class="p">,</span> <span class="s1">&#39;沒&#39;</span><span class="p">,</span> <span class="s1">&#39;圖&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">sCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">tCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="nx">ch</span> <span class="k">of</span> <span class="nx">simplifiedChars</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">ch</span><span class="p">))</span> <span class="nx">sCount</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="nx">ch</span> <span class="k">of</span> <span class="nx">traditionalChars</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">ch</span><span class="p">))</span> <span class="nx">tCount</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">tCount</span> <span class="o">&gt;</span> <span class="nx">sCount</span> <span class="o">?</span> <span class="s2">&#34;t&#34;</span> <span class="o">:</span> <span class="s2">&#34;s&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">originalLang</span> <span class="o">=</span> <span class="nx">detectInitialLang</span><span class="p">(</span><span class="nx">contentEl</span><span class="p">.</span><span class="nx">innerText</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">currentLang</span> <span class="o">=</span> <span class="nx">originalLang</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 用 TreeWalker 收集所有可转换的文本节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">textNodes</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">walker</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTreeWalker</span><span class="p">(</span><span class="nx">contentEl</span><span class="p">,</span> <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">SHOW_TEXT</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">acceptNode</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">parent</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">parent</span><span class="p">)</span> <span class="k">return</span> <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">FILTER_REJECT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 排除按钮及按钮内部的文字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nx">parent</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s2">&#34;#langToggleBtn&#34;</span><span class="p">))</span> <span class="k">return</span> <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">FILTER_REJECT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">FILTER_ACCEPT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="nx">walker</span><span class="p">.</span><span class="nx">nextNode</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">textNodes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">node</span><span class="o">:</span> <span class="nx">walker</span><span class="p">.</span><span class="nx">currentNode</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">originalText</span><span class="o">:</span> <span class="nx">walker</span><span class="p">.</span><span class="nx">currentNode</span><span class="p">.</span><span class="nx">textContent</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">convertedText</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// 缓存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 更新按钮 UI 文案
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">updateButtonUI</span><span class="p">(</span><span class="nx">lang</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">lang</span> <span class="o">===</span> <span class="s2">&#34;s&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">label</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">&#34;简体中文&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">btn</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">&#34;目前为简体中文，点击切换为繁体&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">label</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">&#34;繁體中文&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">btn</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">&#34;目前為繁體中文，點擊切換為簡體&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">updateButtonUI</span><span class="p">(</span><span class="nx">currentLang</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 点击切换逻辑
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;click&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">targetLang</span> <span class="o">=</span> <span class="nx">currentLang</span> <span class="o">===</span> <span class="s2">&#34;s&#34;</span> <span class="o">?</span> <span class="s2">&#34;t&#34;</span> <span class="o">:</span> <span class="s2">&#34;s&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">converter</span> <span class="o">=</span> <span class="nx">OpenCC</span><span class="p">.</span><span class="nx">Converter</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">from</span><span class="o">:</span> <span class="nx">langMap</span><span class="p">[</span><span class="nx">currentLang</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">to</span><span class="o">:</span> <span class="nx">langMap</span><span class="p">[</span><span class="nx">targetLang</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">textNodes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">targetLang</span> <span class="o">===</span> <span class="nx">originalLang</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">item</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">item</span><span class="p">.</span><span class="nx">originalText</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">convertedText</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">item</span><span class="p">.</span><span class="nx">convertedText</span> <span class="o">=</span> <span class="nx">converter</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">originalText</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">item</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">item</span><span class="p">.</span><span class="nx">convertedText</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">currentLang</span> <span class="o">=</span> <span class="nx">targetLang</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">updateButtonUI</span><span class="p">(</span><span class="nx">currentLang</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// 可根据需要调整延迟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">});</span>
+</span></span></code></pre></div>
+</details>
+</li>
+</ul>
 
           
           
@@ -1295,6 +1661,13 @@ twikoo.init({
   <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
   
   
+
+
+<script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js"></script>
+
+
+<script src="/js/lang-toggle.js"></script>
+
 </footer>
 <div
   id="search-wrapper"
