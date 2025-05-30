@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c8dd66b635a05e7e5c5b20e643e7a003e598325bc88c6b153d69e5495b1d72efb9c0a8e9ccb78035117356269b030bd3a304c68d3a17c680692ce969657ff44c.css"
-    integrity="sha512-yN1mtjWgXn5cWyDmQ&#43;egA&#43;WYMlvIjGsVPWnlSVsdcu&#43;5wKjpzLeANRFzViabAwvTowTGjToXxoBpLOlpZX/0TA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.a492b20e84224cd46e49aa60c584ad8ab4d166a38f0b2e9620fddc446124991dcbd9f74a656d45afff4a6bea488b9b8f2019e5bae7c2bd281e095a139905045d.css"
+    integrity="sha512-pJKyDoQiTNRuSapgxYStirTRZqOPCy6WIP3cRGEkmR3L2fdKZW1Fr/9Ka&#43;pIi5uPIBnluufCvSgeCVoTmQUEXQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.3ad74b33440334ca29f8801ec6dac1f314951cf580e503d49631816b48d1f28d03543275f92b651565b48045b90731f47595b1396214b8b6aa11c6990f867f7e.js"
-    integrity="sha512-OtdLM0QDNMop&#43;IAextrB8xSVHPWA5QPUljGBa0jR8o0DVDJ1&#43;StlFWW0gEW5BzH0dZWxOWIUuLaqEcaZD4Z/fg==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f7e04724dda02f8ffdc6b4507869a4010cd1ae9151a97168d5fd3112b9825c5c6ac376f7d11b0bc353a66d91d614f06e749efb7e56da4ee6fa0c900ed45c85f7.js"
+    integrity="sha512-9&#43;BHJN2gL4/9xrRQeGmkAQzRrpFRqXFo1f0xErmCXFxqw3b30RsLw1OmbZHWFPBudJ77flbaTub6DJAO1FyF9w==" data-copy="複製" data-copied="已複製"></script>
   
   
   
@@ -86,6 +86,8 @@
   <meta name="twitter:title" content="折騰小記｜如果你也想建個靜態博客：（一）安裝hugo">
   <meta name="twitter:description" content="萬事開頭難…(">
 
+    
+  
   
   <script type="application/ld+json">
   [{
@@ -158,6 +160,8 @@
 <link rel="stylesheet" href="/css/syntax-dark.css">
 
 
+  
+  
   
   <meta name="theme-color"/>
   
@@ -719,8 +723,7 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView" class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     目錄
@@ -779,31 +782,6 @@
 
 <script>
 
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -827,7 +805,7 @@
             $(e).removeClass('active').siblings('ul').hide();
           
         });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').addClass('active');
         $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
           $(e).children('a').parents('ul').show();          
         });
@@ -842,7 +820,6 @@
       });
     }
   })();
-
 
 </script>
    </div>
@@ -884,14 +861,13 @@
 <li>本篇主要內容：安裝 Hugo，並且把你的博客文件夾建起來！</li>
 </ul></blockquote>
 
-
 <h1 class="relative group">&hellip;何爲 hugo 
-    <div id="%E4%BD%95%E7%88%B2-hugo" class="anchor"></div>
+    <div id="何爲-hugo" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BD%95%E7%88%B2-hugo" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%bd%95%e7%88%b2-hugo" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -913,27 +889,25 @@
 </a>
 。</p>
 
-
 <h1 class="relative group">安裝 hugo 
-    <div id="%E5%AE%89%E8%A3%9D-hugo" class="anchor"></div>
+    <div id="安裝-hugo" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%AE%89%E8%A3%9D-hugo" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%ae%89%e8%a3%9d-hugo" aria-label="定位點">#</a>
     </span>        
     
 </h1>
 <p>兩個版本：standard（標準版）與 extended（延展版），推薦安裝 extended edition。</p>
 
-
 <h2 class="relative group">Windows 系統下安裝 
-    <div id="windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B%E5%AE%89%E8%A3%9D" class="anchor"></div>
+    <div id="windows-系統下安裝" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#windows-%E7%B3%BB%E7%B5%B1%E4%B8%8B%E5%AE%89%E8%A3%9D" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#windows-%e7%b3%bb%e7%b5%b1%e4%b8%8b%e5%ae%89%e8%a3%9d" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -953,14 +927,13 @@
 <li>注意添加環境變量</li>
 </ol>
 
-
 <h2 class="relative group">MacOS 系統下安裝 
-    <div id="macos-%E7%B3%BB%E7%B5%B1%E4%B8%8B%E5%AE%89%E8%A3%9D" class="anchor"></div>
+    <div id="macos-系統下安裝" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#macos-%E7%B3%BB%E7%B5%B1%E4%B8%8B%E5%AE%89%E8%A3%9D" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#macos-%e7%b3%bb%e7%b5%b1%e4%b8%8b%e5%ae%89%e8%a3%9d" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -974,14 +947,13 @@
 </a>
 </p>
 
-
 <h3 class="relative group">或許你需要先安裝 Homebrew 
-    <div id="%E6%88%96%E8%A8%B1%E4%BD%A0%E9%9C%80%E8%A6%81%E5%85%88%E5%AE%89%E8%A3%9D-homebrew" class="anchor"></div>
+    <div id="或許你需要先安裝-homebrew" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%88%96%E8%A8%B1%E4%BD%A0%E9%9C%80%E8%A6%81%E5%85%88%E5%AE%89%E8%A3%9D-homebrew" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e6%88%96%e8%a8%b1%e4%bd%a0%e9%9c%80%e8%a6%81%e5%85%88%e5%ae%89%e8%a3%9d-homebrew" aria-label="定位點">#</a>
     </span>        
     
 </h3>
@@ -1015,14 +987,13 @@
 安裝完成之後用<code>brew update</code>命令檢查狀態，再試試<code>brew -v</code>查看當前版本，確認 Homebrew 安裝完成。</p>
 <hr>
 
-
 <h3 class="relative group">安裝 Hugo 
-    <div id="%E5%AE%89%E8%A3%9D-hugo-1" class="anchor"></div>
+    <div id="安裝-hugo-1" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%AE%89%E8%A3%9D-hugo-1" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%ae%89%e8%a3%9d-hugo-1" aria-label="定位點">#</a>
     </span>        
     
 </h3>
@@ -1032,14 +1003,13 @@
 <p>好了，hugo 安裝成功了，下一步：建立你的博客。</p>
 <hr>
 
-
 <h1 class="relative group">建個博客&hellip;主題是必須的嗎？ 
-    <div id="%E5%BB%BA%E5%80%8B%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%8C%E6%98%AF%E5%BF%85%E9%A0%88%E7%9A%84%E5%97%8E" class="anchor"></div>
+    <div id="建個博客主題是必須的嗎" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%BB%BA%E5%80%8B%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%8C%E6%98%AF%E5%BF%85%E9%A0%88%E7%9A%84%E5%97%8E" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%bb%ba%e5%80%8b%e5%8d%9a%e5%ae%a2%e4%b8%bb%e9%a1%8c%e6%98%af%e5%bf%85%e9%a0%88%e7%9a%84%e5%97%8e" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -1133,20 +1103,25 @@ themes（主題）</p>
 </span></span><span class="line"><span class="cl">Press Ctrl+C to stop
 </span></span></code></pre></div><p>地址欄輸入上方這個地址：<code>http://localhost:1313/</code>，現在你應該就能看到個人網頁的雛形了：<br>
 
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="./hugo-samplesite.png" alt="大概就長這樣" />
-      
-    </figure>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="大概就長這樣" src="./hugo-samplesite.png" />
+
+  
+</figure>
 </p>
 
-
 <h1 class="relative group">肆意書寫本不需要太多鋪墊 
-    <div id="%E8%82%86%E6%84%8F%E6%9B%B8%E5%AF%AB%E6%9C%AC%E4%B8%8D%E9%9C%80%E8%A6%81%E5%A4%AA%E5%A4%9A%E9%8B%AA%E5%A2%8A" class="anchor"></div>
+    <div id="肆意書寫本不需要太多鋪墊" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%82%86%E6%84%8F%E6%9B%B8%E5%AF%AB%E6%9C%AC%E4%B8%8D%E9%9C%80%E8%A6%81%E5%A4%AA%E5%A4%9A%E9%8B%AA%E5%A2%8A" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e8%82%86%e6%84%8f%e6%9b%b8%e5%af%ab%e6%9c%ac%e4%b8%8d%e9%9c%80%e8%a6%81%e5%a4%aa%e5%a4%9a%e9%8b%aa%e5%a2%8a" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -1183,14 +1158,13 @@ themes（主題）</p>
 </span></span><span class="line"><span class="cl">---
 </span></span></code></pre></div><p>寫好第一篇博文，一個最簡單的靜態博客就已算成功建立，至於日後賽博房間要如何裝修，刷什麼漆擺什麼物件，就全憑你自己的喜好來，裝修其實是個非常耗時耗精力（當然也非常有趣）的事情，並不一定要急於短時間內搞定。</p>
 
-
 <h1 class="relative group">主題推薦？和一些廢話 
-    <div id="%E4%B8%BB%E9%A1%8C%E6%8E%A8%E8%96%A6%E5%92%8C%E4%B8%80%E4%BA%9B%E5%BB%A2%E8%A9%B1" class="anchor"></div>
+    <div id="主題推薦和一些廢話" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%B8%BB%E9%A1%8C%E6%8E%A8%E8%96%A6%E5%92%8C%E4%B8%80%E4%BA%9B%E5%BB%A2%E8%A9%B1" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%b8%bb%e9%a1%8c%e6%8e%a8%e8%96%a6%e5%92%8c%e4%b8%80%e4%ba%9b%e5%bb%a2%e8%a9%b1" aria-label="定位點">#</a>
     </span>        
     
 </h1>

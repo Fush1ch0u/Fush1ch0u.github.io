@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c8dd66b635a05e7e5c5b20e643e7a003e598325bc88c6b153d69e5495b1d72efb9c0a8e9ccb78035117356269b030bd3a304c68d3a17c680692ce969657ff44c.css"
-    integrity="sha512-yN1mtjWgXn5cWyDmQ&#43;egA&#43;WYMlvIjGsVPWnlSVsdcu&#43;5wKjpzLeANRFzViabAwvTowTGjToXxoBpLOlpZX/0TA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.a492b20e84224cd46e49aa60c584ad8ab4d166a38f0b2e9620fddc446124991dcbd9f74a656d45afff4a6bea488b9b8f2019e5bae7c2bd281e095a139905045d.css"
+    integrity="sha512-pJKyDoQiTNRuSapgxYStirTRZqOPCy6WIP3cRGEkmR3L2fdKZW1Fr/9Ka&#43;pIi5uPIBnluufCvSgeCVoTmQUEXQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.3ad74b33440334ca29f8801ec6dac1f314951cf580e503d49631816b48d1f28d03543275f92b651565b48045b90731f47595b1396214b8b6aa11c6990f867f7e.js"
-    integrity="sha512-OtdLM0QDNMop&#43;IAextrB8xSVHPWA5QPUljGBa0jR8o0DVDJ1&#43;StlFWW0gEW5BzH0dZWxOWIUuLaqEcaZD4Z/fg==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f7e04724dda02f8ffdc6b4507869a4010cd1ae9151a97168d5fd3112b9825c5c6ac376f7d11b0bc353a66d91d614f06e749efb7e56da4ee6fa0c900ed45c85f7.js"
+    integrity="sha512-9&#43;BHJN2gL4/9xrRQeGmkAQzRrpFRqXFo1f0xErmCXFxqw3b30RsLw1OmbZHWFPBudJ77flbaTub6DJAO1FyF9w==" data-copy="複製" data-copied="已複製"></script>
   
   
   
@@ -86,6 +86,8 @@
   <meta name="twitter:title" content="Blog｜自定義Hugo Blowfish主題">
   <meta name="twitter:description" content="贈你杯酒共我飲">
 
+    
+  
   
   <script type="application/ld+json">
   [{
@@ -158,6 +160,8 @@
 <link rel="stylesheet" href="/css/syntax-dark.css">
 
 
+  
+  
   
   <meta name="theme-color"/>
   
@@ -719,8 +723,7 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView" class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     目錄
@@ -779,31 +782,6 @@
 
 <script>
 
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -827,7 +805,7 @@
             $(e).removeClass('active').siblings('ul').hide();
           
         });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').addClass('active');
         $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
           $(e).children('a').parents('ul').show();          
         });
@@ -842,7 +820,6 @@
       });
     }
   })();
-
 
 </script>
    </div>
@@ -859,14 +836,13 @@
 <p>太喜歡倒騰了，博客暫時沒什麼有趣內容我卻打算針對blowfish的主題自定義做個筆記，踩了太多坑了。<br>
 （有糾結要不要一個筆記發一篇文，看我這個廢話程度，我覺得&hellip;也不是沒可能。）</p></blockquote>
 
-
 <h1 class="relative group">給文章外鏈加上圖標 
-    <div id="%E7%B5%A6%E6%96%87%E7%AB%A0%E5%A4%96%E9%8F%88%E5%8A%A0%E4%B8%8A%E5%9C%96%E6%A8%99" class="anchor"></div>
+    <div id="給文章外鏈加上圖標" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%B5%A6%E6%96%87%E7%AB%A0%E5%A4%96%E9%8F%88%E5%8A%A0%E4%B8%8A%E5%9C%96%E6%A8%99" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e7%b5%a6%e6%96%87%e7%ab%a0%e5%a4%96%e9%8f%88%e5%8a%a0%e4%b8%8a%e5%9c%96%e6%a8%99" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -898,14 +874,13 @@
 </span></span><span class="line"><span class="cl">&lt;/a&gt;
 </span></span></code></pre></div><p>修改點主要在 width 和 height，且增加了<code>display: inline-block;</code>這一句，使圖標和文字保持在一行。如還需要讓鼠標移動到外鏈時改變顏色，那麽請繼續往下看：</p>
 
-
 <h2 class="relative group">增加鼠標懸停變色效果 
-    <div id="%E5%A2%9E%E5%8A%A0%E9%BC%A0%E6%A8%99%E6%87%B8%E5%81%9C%E8%AE%8A%E8%89%B2%E6%95%88%E6%9E%9C" class="anchor"></div>
+    <div id="增加鼠標懸停變色效果" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%A2%9E%E5%8A%A0%E9%BC%A0%E6%A8%99%E6%87%B8%E5%81%9C%E8%AE%8A%E8%89%B2%E6%95%88%E6%9E%9C" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%a2%9e%e5%8a%a0%e9%bc%a0%e6%a8%99%e6%87%b8%e5%81%9c%e8%ae%8a%e8%89%b2%e6%95%88%e6%9e%9c" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -968,14 +943,13 @@
 </p>
 <hr>
 
-
 <h1 class="relative group">指定Hugo時區 
-    <div id="%E6%8C%87%E5%AE%9Ahugo%E6%99%82%E5%8D%80" class="anchor"></div>
+    <div id="指定hugo時區" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%8C%87%E5%AE%9Ahugo%E6%99%82%E5%8D%80" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e6%8c%87%e5%ae%9ahugo%e6%99%82%e5%8d%80" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -985,14 +959,13 @@
 </span></span></code></pre></div><p>當然也可以文章加時間戳，但我覺得沒必要，後面要顯示「最後編輯時間」時再修改。</p>
 <hr>
 
-
 <h1 class="relative group">自定義footer文字&amp;渲染修正 
-    <div id="%E8%87%AA%E5%AE%9A%E7%BE%A9footer%E6%96%87%E5%AD%97%E6%B8%B2%E6%9F%93%E4%BF%AE%E6%AD%A3" class="anchor"></div>
+    <div id="自定義footer文字渲染修正" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%87%AA%E5%AE%9A%E7%BE%A9footer%E6%96%87%E5%AD%97%E6%B8%B2%E6%9F%93%E4%BF%AE%E6%AD%A3" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e8%87%aa%e5%ae%9a%e7%be%a9footer%e6%96%87%e5%ad%97%e6%b8%b2%e6%9f%93%e4%bf%ae%e6%ad%a3" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -1016,14 +989,13 @@
 一般情況下，如果什麼都不寫，footer區域會自動顯示為<code>© 2025</code>。<br>
 如要實現©符號前的文字自定義，則需要：</p>
 
-
 <h2 class="relative group">修改hugo.toml 
-    <div id="%E4%BF%AE%E6%94%B9hugotoml" class="anchor"></div>
+    <div id="修改hugotoml" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9hugotoml" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%bf%ae%e6%94%b9hugotoml" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -1070,14 +1042,13 @@
 後來我想了一下，大概是因為我的<code>languages.zh.toml</code>文件中設置了<code>isoCode = &quot;zh&quot;</code>，又或者是因為我的字體使用順序是繁體&gt;簡體&gt;英文導致默認使用了繁體標點（我已實驗過，字體是可以正常顯示英文符號的），總之結論像是 markdown 渲染的時候莫名其妙把我的標點符號給替換了。<br>
 那麼接下來就需要：</p>
 
-
 <h2 class="relative group">修正標點符號的渲染 
-    <div id="%E4%BF%AE%E6%AD%A3%E6%A8%99%E9%BB%9E%E7%AC%A6%E8%99%9F%E7%9A%84%E6%B8%B2%E6%9F%93" class="anchor"></div>
+    <div id="修正標點符號的渲染" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%AD%A3%E6%A8%99%E9%BB%9E%E7%AC%A6%E8%99%9F%E7%9A%84%E6%B8%B2%E6%9F%93" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%bf%ae%e6%ad%a3%e6%a8%99%e9%bb%9e%e7%ac%a6%e8%99%9f%e7%9a%84%e6%b8%b2%e6%9f%93" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -1102,14 +1073,13 @@
 <p>這樣就可以確保自定義的footer文字和渲染都是正確的了。</p>
 <hr>
 
-
 <h1 class="relative group">代碼塊設置為MacOS風格 
-    <div id="%E4%BB%A3%E7%A2%BC%E5%A1%8A%E8%A8%AD%E7%BD%AE%E7%82%BAmacos%E9%A2%A8%E6%A0%BC" class="anchor"></div>
+    <div id="代碼塊設置為macos風格" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BB%A3%E7%A2%BC%E5%A1%8A%E8%A8%AD%E7%BD%AE%E7%82%BAmacos%E9%A2%A8%E6%A0%BC" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%bb%a3%e7%a2%bc%e5%a1%8a%e8%a8%ad%e7%bd%ae%e7%82%bamacos%e9%a2%a8%e6%a0%bc" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -1190,14 +1160,13 @@
 另外就是為了適配當前深色模式下的博客配色，深色模式下的MacOS标题栏顏色也有加深，可根據實際情況進行修改。</p>
 <hr>
 
-
 <h1 class="relative group">代碼塊文本高亮 
-    <div id="%E4%BB%A3%E7%A2%BC%E5%A1%8A%E6%96%87%E6%9C%AC%E9%AB%98%E4%BA%AE" class="anchor"></div>
+    <div id="代碼塊文本高亮" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BB%A3%E7%A2%BC%E5%A1%8A%E6%96%87%E6%9C%AC%E9%AB%98%E4%BA%AE" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%bb%a3%e7%a2%bc%e5%a1%8a%e6%96%87%e6%9c%ac%e9%ab%98%e4%ba%ae" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -1217,23 +1186,28 @@
 當然也可以把兩個css放在static/css下，引用就不需要這麼複雜了。</p>
 <hr>
 
-
 <h1 class="relative group">給文章增加簡繁切換按鈕 
-    <div id="%E7%B5%A6%E6%96%87%E7%AB%A0%E5%A2%9E%E5%8A%A0%E7%B0%A1%E7%B9%81%E5%88%87%E6%8F%9B%E6%8C%89%E9%88%95" class="anchor"></div>
+    <div id="給文章增加簡繁切換按鈕" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%B5%A6%E6%96%87%E7%AB%A0%E5%A2%9E%E5%8A%A0%E7%B0%A1%E7%B9%81%E5%88%87%E6%8F%9B%E6%8C%89%E9%88%95" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e7%b5%a6%e6%96%87%e7%ab%a0%e5%a2%9e%e5%8a%a0%e7%b0%a1%e7%b9%81%e5%88%87%e6%8f%9b%e6%8c%89%e9%88%95" aria-label="定位點">#</a>
     </span>        
     
 </h1>
 <p>這個功能也是看似無用但我一直想加。效果大概如圖：<br>
 
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="./sample.png" alt="簡繁切換按鈕" />
-      
-    </figure>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="簡繁切換按鈕" src="./sample.png" />
+
+  
+</figure>
 <br>
 原意是放在文章信息旁邊，這樣點擊按鈕之後就會將整個頁面切換為簡體。再點一下即可切換回繁體。<br>
 轉換也不僅限於繁體頁面，若是簡體中文書寫的頁面也會自動識別，確定為簡體中文後按鈕就會顯示&quot;簡體中文&quot;。</p>

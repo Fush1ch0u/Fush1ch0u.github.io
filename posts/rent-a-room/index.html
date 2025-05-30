@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c8dd66b635a05e7e5c5b20e643e7a003e598325bc88c6b153d69e5495b1d72efb9c0a8e9ccb78035117356269b030bd3a304c68d3a17c680692ce969657ff44c.css"
-    integrity="sha512-yN1mtjWgXn5cWyDmQ&#43;egA&#43;WYMlvIjGsVPWnlSVsdcu&#43;5wKjpzLeANRFzViabAwvTowTGjToXxoBpLOlpZX/0TA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.a492b20e84224cd46e49aa60c584ad8ab4d166a38f0b2e9620fddc446124991dcbd9f74a656d45afff4a6bea488b9b8f2019e5bae7c2bd281e095a139905045d.css"
+    integrity="sha512-pJKyDoQiTNRuSapgxYStirTRZqOPCy6WIP3cRGEkmR3L2fdKZW1Fr/9Ka&#43;pIi5uPIBnluufCvSgeCVoTmQUEXQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.3ad74b33440334ca29f8801ec6dac1f314951cf580e503d49631816b48d1f28d03543275f92b651565b48045b90731f47595b1396214b8b6aa11c6990f867f7e.js"
-    integrity="sha512-OtdLM0QDNMop&#43;IAextrB8xSVHPWA5QPUljGBa0jR8o0DVDJ1&#43;StlFWW0gEW5BzH0dZWxOWIUuLaqEcaZD4Z/fg==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f7e04724dda02f8ffdc6b4507869a4010cd1ae9151a97168d5fd3112b9825c5c6ac376f7d11b0bc353a66d91d614f06e749efb7e56da4ee6fa0c900ed45c85f7.js"
+    integrity="sha512-9&#43;BHJN2gL4/9xrRQeGmkAQzRrpFRqXFo1f0xErmCXFxqw3b30RsLw1OmbZHWFPBudJ77flbaTub6DJAO1FyF9w==" data-copy="複製" data-copied="已複製"></script>
   
   
   
@@ -85,6 +85,8 @@
   <meta name="twitter:title" content="折騰小記｜獨居租房：做不完的功課">
   <meta name="twitter:description" content="如果你租房超過2年，那你一定懂我在說什麼。">
 
+    
+  
   
   <script type="application/ld+json">
   [{
@@ -157,6 +159,8 @@
 <link rel="stylesheet" href="/css/syntax-dark.css">
 
 
+  
+  
   
   <meta name="theme-color"/>
   
@@ -710,8 +714,7 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView" class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     目錄
@@ -774,31 +777,6 @@
 
 <script>
 
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -822,7 +800,7 @@
             $(e).removeClass('active').siblings('ul').hide();
           
         });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').addClass('active');
         $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
           $(e).children('a').parents('ul').show();          
         });
@@ -837,7 +815,6 @@
       });
     }
   })();
-
 
 </script>
    </div>
@@ -854,14 +831,13 @@
 <strong>閱前預警</strong>:本篇內容更適合像我一樣喜歡整租套一+1年及以上起步長租+非常非常非常喜歡折騰的朋友。</p>
 <hr>
 
-
 <h1 class="relative group">在開始搜索房源之前 
-    <div id="%E5%9C%A8%E9%96%8B%E5%A7%8B%E6%90%9C%E7%B4%A2%E6%88%BF%E6%BA%90%E4%B9%8B%E5%89%8D" class="anchor"></div>
+    <div id="在開始搜索房源之前" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%9C%A8%E9%96%8B%E5%A7%8B%E6%90%9C%E7%B4%A2%E6%88%BF%E6%BA%90%E4%B9%8B%E5%89%8D" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%9c%a8%e9%96%8b%e5%a7%8b%e6%90%9c%e7%b4%a2%e6%88%bf%e6%ba%90%e4%b9%8b%e5%89%8d" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -879,27 +855,25 @@
 <p><strong>是否是租售房</strong>：一定注意房源本身是否在售。如果在售的話，租住期間可能會不斷有人來看房，擾亂你的正常生活。我會直接排除掛租售的房子，只考慮僅出租的房源。</p>
 <hr>
 
-
 <h1 class="relative group">開始搜索！ 
-    <div id="%E9%96%8B%E5%A7%8B%E6%90%9C%E7%B4%A2" class="anchor"></div>
+    <div id="開始搜索" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%96%8B%E5%A7%8B%E6%90%9C%E7%B4%A2" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e9%96%8b%e5%a7%8b%e6%90%9c%e7%b4%a2" aria-label="定位點">#</a>
     </span>        
     
 </h1>
 <p>在心裡大概劃定了「不能接受的點」之後，你就可以打開安居客/58/貝殼租房/小紅書/豆瓣/微博之類的app了。</p>
 
-
 <h2 class="relative group">如果你更傾向中介 
-    <div id="%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%9B%B4%E5%82%BE%E5%90%91%E4%B8%AD%E4%BB%8B" class="anchor"></div>
+    <div id="如果你更傾向中介" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%9B%B4%E5%82%BE%E5%90%91%E4%B8%AD%E4%BB%8B" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%a6%82%e6%9e%9c%e4%bd%a0%e6%9b%b4%e5%82%be%e5%90%91%e4%b8%ad%e4%bb%8b" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -910,14 +884,13 @@
 重要的話要說三遍，所有需要所謂「帶看費」的都有可能是騙子/流氓。</p>
 <p>還有一種就是到了現場發現圖文不符、讓人交200-500的帶看費的情況。這時候也扭頭就走絕對不要停留。</p>
 
-
 <h2 class="relative group">如果你想自己找房 
-    <div id="%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3%E8%87%AA%E5%B7%B1%E6%89%BE%E6%88%BF" class="anchor"></div>
+    <div id="如果你想自己找房" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3%E8%87%AA%E5%B7%B1%E6%89%BE%E6%88%BF" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%a6%82%e6%9e%9c%e4%bd%a0%e6%83%b3%e8%87%aa%e5%b7%b1%e6%89%be%e6%88%bf" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -926,14 +899,13 @@
 如果要在小紅書上找房，也請注意不願意在帖中暴露房源信息的八成都是照騙中介，評論很快回覆但要求你私信他的也都是中介。</p>
 <p>如果你喜歡的區域有更多房源掌握在老舊小區保安手中，也可以去聯繫他們，給保安大叔散兩根煙就好，確定租房之後他自然會找你要紅包的（。</p>
 
-
 <h2 class="relative group">別忘了你的預算 
-    <div id="%E5%88%A5%E5%BF%98%E4%BA%86%E4%BD%A0%E7%9A%84%E9%A0%90%E7%AE%97" class="anchor"></div>
+    <div id="別忘了你的預算" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%88%A5%E5%BF%98%E4%BA%86%E4%BD%A0%E7%9A%84%E9%A0%90%E7%AE%97" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%88%a5%e5%bf%98%e4%ba%86%e4%bd%a0%e7%9a%84%e9%a0%90%e7%ae%97" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -941,14 +913,13 @@
 <p>8-10月算是租房旺季，價格會飄高一些；10月之後到過年前開始進入淡季，房源相對減少（好的房子已被篩走）但相對的也會有一些房有好價。</p>
 <hr>
 
-
 <h2 class="relative group">在實地看房之前，試試VR看房 
-    <div id="%E5%9C%A8%E5%AF%A6%E5%9C%B0%E7%9C%8B%E6%88%BF%E4%B9%8B%E5%89%8D%E8%A9%A6%E8%A9%A6vr%E7%9C%8B%E6%88%BF" class="anchor"></div>
+    <div id="在實地看房之前試試vr看房" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%9C%A8%E5%AF%A6%E5%9C%B0%E7%9C%8B%E6%88%BF%E4%B9%8B%E5%89%8D%E8%A9%A6%E8%A9%A6vr%E7%9C%8B%E6%88%BF" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%9c%a8%e5%af%a6%e5%9c%b0%e7%9c%8b%e6%88%bf%e4%b9%8b%e5%89%8d%e8%a9%a6%e8%a9%a6vr%e7%9c%8b%e6%88%bf" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -962,27 +933,25 @@
 <p>這幾個點都是在App內VR看房時能看出來的，無需實地看房都可以對房源進行再次篩選。</p>
 <hr>
 
-
 <h1 class="relative group">去看房吧！ 
-    <div id="%E5%8E%BB%E7%9C%8B%E6%88%BF%E5%90%A7" class="anchor"></div>
+    <div id="去看房吧" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8E%BB%E7%9C%8B%E6%88%BF%E5%90%A7" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%8e%bb%e7%9c%8b%e6%88%bf%e5%90%a7" aria-label="定位點">#</a>
     </span>        
     
 </h1>
 <p>恭喜你，在線上篩選無數之後走到了去線下看房這一步！線下看房切勿走馬觀花，仔細檢查房子狀況非常重要。</p>
 
-
 <h2 class="relative group">進入小區 
-    <div id="%E9%80%B2%E5%85%A5%E5%B0%8F%E5%8D%80" class="anchor"></div>
+    <div id="進入小區" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%80%B2%E5%85%A5%E5%B0%8F%E5%8D%80" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e9%80%b2%e5%85%a5%e5%b0%8f%e5%8d%80" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -993,14 +962,13 @@
 <li>單元內：著重關注電梯運行狀況，單元是否有門禁？樓道內是否明亮有監控設施，監控設施是否運行良好。</li>
 </ol>
 
-
 <h2 class="relative group">房間內部 
-    <div id="%E6%88%BF%E9%96%93%E5%85%A7%E9%83%A8" class="anchor"></div>
+    <div id="房間內部" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%88%BF%E9%96%93%E5%85%A7%E9%83%A8" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e6%88%bf%e9%96%93%e5%85%a7%e9%83%a8" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -1016,14 +984,13 @@
 <p>這些都是非常基礎但必須要在實地看房中注意到的點喔。</p>
 <hr>
 
-
 <h1 class="relative group">要簽約了，我需要注意些什麼？ 
-    <div id="%E8%A6%81%E7%B0%BD%E7%B4%84%E4%BA%86%E6%88%91%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BA%9B%E4%BB%80%E9%BA%BC" class="anchor"></div>
+    <div id="要簽約了我需要注意些什麼" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%A6%81%E7%B0%BD%E7%B4%84%E4%BA%86%E6%88%91%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BA%9B%E4%BB%80%E9%BA%BC" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e8%a6%81%e7%b0%bd%e7%b4%84%e4%ba%86%e6%88%91%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e4%ba%9b%e4%bb%80%e9%ba%bc" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -1046,14 +1013,13 @@
 舉個例子：上一次租房到期需在1月10日前退房，而新房在12月30日就可簽約，可以和新房房東協商為期一週左右的免租期，即合同上的租房起始日為1月5日，盡量減少自己的損失，多一些搬家和計劃的時間。</p>
 <hr>
 
-
 <h1 class="relative group">簽約完成！ 
-    <div id="%E7%B0%BD%E7%B4%84%E5%AE%8C%E6%88%90" class="anchor"></div>
+    <div id="簽約完成" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%B0%BD%E7%B4%84%E5%AE%8C%E6%88%90" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e7%b0%bd%e7%b4%84%e5%ae%8c%e6%88%90" aria-label="定位點">#</a>
     </span>        
     
 </h1>

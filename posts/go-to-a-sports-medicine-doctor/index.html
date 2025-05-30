@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c8dd66b635a05e7e5c5b20e643e7a003e598325bc88c6b153d69e5495b1d72efb9c0a8e9ccb78035117356269b030bd3a304c68d3a17c680692ce969657ff44c.css"
-    integrity="sha512-yN1mtjWgXn5cWyDmQ&#43;egA&#43;WYMlvIjGsVPWnlSVsdcu&#43;5wKjpzLeANRFzViabAwvTowTGjToXxoBpLOlpZX/0TA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.a492b20e84224cd46e49aa60c584ad8ab4d166a38f0b2e9620fddc446124991dcbd9f74a656d45afff4a6bea488b9b8f2019e5bae7c2bd281e095a139905045d.css"
+    integrity="sha512-pJKyDoQiTNRuSapgxYStirTRZqOPCy6WIP3cRGEkmR3L2fdKZW1Fr/9Ka&#43;pIi5uPIBnluufCvSgeCVoTmQUEXQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.3ad74b33440334ca29f8801ec6dac1f314951cf580e503d49631816b48d1f28d03543275f92b651565b48045b90731f47595b1396214b8b6aa11c6990f867f7e.js"
-    integrity="sha512-OtdLM0QDNMop&#43;IAextrB8xSVHPWA5QPUljGBa0jR8o0DVDJ1&#43;StlFWW0gEW5BzH0dZWxOWIUuLaqEcaZD4Z/fg==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f7e04724dda02f8ffdc6b4507869a4010cd1ae9151a97168d5fd3112b9825c5c6ac376f7d11b0bc353a66d91d614f06e749efb7e56da4ee6fa0c900ed45c85f7.js"
+    integrity="sha512-9&#43;BHJN2gL4/9xrRQeGmkAQzRrpFRqXFo1f0xErmCXFxqw3b30RsLw1OmbZHWFPBudJ77flbaTub6DJAO1FyF9w==" data-copy="複製" data-copied="已複製"></script>
   
   
   
@@ -85,6 +85,8 @@
   <meta name="twitter:title" content="東跑西顛｜春日的疼痛感格外漫長">
   <meta name="twitter:description" content="我逐漸脆弱的身體——">
 
+    
+  
   
   <script type="application/ld+json">
   [{
@@ -157,6 +159,8 @@
 <link rel="stylesheet" href="/css/syntax-dark.css">
 
 
+  
+  
   
   <meta name="theme-color"/>
   
@@ -700,8 +704,7 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView" class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     目錄
@@ -756,31 +759,6 @@
 
 <script>
 
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -804,7 +782,7 @@
             $(e).removeClass('active').siblings('ul').hide();
           
         });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').addClass('active');
         $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
           $(e).children('a').parents('ul').show();          
         });
@@ -819,7 +797,6 @@
       });
     }
   })();
-
 
 </script>
    </div>
@@ -836,14 +813,13 @@
 放任不管的後果是1月下旬某日站在原地沒有任何動作，在沒有崴腳or扭腳的情況下，右腳踝內側傳來電擊一般的疼痛。當時走路直接變成一瘸一拐右腳無法受力（軟腳），右腳踝也無法向外旋轉或者整體往內八方向轉，一動腳踝就像要裂開一樣。
 最後還是忍不住請假去看醫生了。</p>
 
-
 <h2 class="relative group">先看足踝外科 
-    <div id="%E5%85%88%E7%9C%8B%E8%B6%B3%E8%B8%9D%E5%A4%96%E7%A7%91" class="anchor"></div>
+    <div id="先看足踝外科" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%85%88%E7%9C%8B%E8%B6%B3%E8%B8%9D%E5%A4%96%E7%A7%91" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%85%88%e7%9c%8b%e8%b6%b3%e8%b8%9d%e5%a4%96%e7%a7%91" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -864,14 +840,13 @@
 等了一個下午就這麼被打發走了。<br>
 <strong>本次開銷：10元掛號費+120元踝關節X光+24.02口服藥物 = 154.02元</strong></p>
 
-
 <h2 class="relative group">人生第一次針灸 
-    <div id="%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%87%9D%E7%81%B8" class="anchor"></div>
+    <div id="人生第一次針灸" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%87%9D%E7%81%B8" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%ba%ba%e7%94%9f%e7%ac%ac%e4%b8%80%e6%ac%a1%e9%87%9d%e7%81%b8" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -883,14 +858,13 @@
 不過觀察一週後膝蓋後窩狀況改善不大。也可能是因為沒有扎夠（啊？）<br>
 <strong>本次開銷：單次針灸60元</strong></p>
 
-
 <h2 class="relative group">還是去運動醫學科吧 
-    <div id="%E9%82%84%E6%98%AF%E5%8E%BB%E9%81%8B%E5%8B%95%E9%86%AB%E5%AD%B8%E7%A7%91%E5%90%A7" class="anchor"></div>
+    <div id="還是去運動醫學科吧" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%82%84%E6%98%AF%E5%8E%BB%E9%81%8B%E5%8B%95%E9%86%AB%E5%AD%B8%E7%A7%91%E5%90%A7" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e9%82%84%e6%98%af%e5%8e%bb%e9%81%8b%e5%8b%95%e9%86%ab%e5%ad%b8%e7%a7%91%e5%90%a7" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -900,14 +874,13 @@
 我：（OS：啊？寶貝兒？）啊還是要扎針啊&hellip;<br>
 醫生（笑眯眯地）：是喔～</p>
 
-
 <h3 class="relative group">你永遠逃不過中成藥 
-    <div id="%E4%BD%A0%E6%B0%B8%E9%81%A0%E9%80%83%E4%B8%8D%E9%81%8E%E4%B8%AD%E6%88%90%E8%97%A5" class="anchor"></div>
+    <div id="你永遠逃不過中成藥" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BD%A0%E6%B0%B8%E9%81%A0%E9%80%83%E4%B8%8D%E9%81%8E%E4%B8%AD%E6%88%90%E8%97%A5" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%bd%a0%e6%b0%b8%e9%81%a0%e9%80%83%e4%b8%8d%e9%81%8e%e4%b8%ad%e6%88%90%e8%97%a5" aria-label="定位點">#</a>
     </span>        
     
 </h3>
@@ -933,14 +906,13 @@
   </figure>
 <strong>本次開銷：14元掛號費+182元電針治療+65.02元外用藥物 = 261.02元</strong></p>
 
-
 <h3 class="relative group">按摩也是必要的 
-    <div id="%E6%8C%89%E6%91%A9%E4%B9%9F%E6%98%AF%E5%BF%85%E8%A6%81%E7%9A%84" class="anchor"></div>
+    <div id="按摩也是必要的" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%8C%89%E6%91%A9%E4%B9%9F%E6%98%AF%E5%BF%85%E8%A6%81%E7%9A%84" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e6%8c%89%e6%91%a9%e4%b9%9f%e6%98%af%e5%bf%85%e8%a6%81%e7%9a%84" aria-label="定位點">#</a>
     </span>        
     
 </h3>
@@ -956,21 +928,26 @@
 雙手手掌貼牆、手臂伸直，健康的腿往前屈膝，患腿往後伸直，腳底踩地，感覺到患腿後側拉伸感，保持30s-1分鐘靜止狀態即可（不用來回搖晃）。<br>
 醫生說放鬆膕肌這個姿勢是不錯的，自己空了也可以按一按足三里穴位。我：沒問題！<br>
 
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="./%E6%8B%89%E4%BC%B8%E9%81%8B%E5%8B%95.jpg" alt="依然畫伯預警wwww" />
-      
-    </figure>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="依然畫伯預警wwww" src="./%E6%8B%89%E4%BC%B8%E9%81%8B%E5%8B%95.jpg" />
+
+  
+</figure>
 
 個人認為按摩鬆解和拉伸是日常都可以嘗試的放鬆肌肉的方式，希望也能對下肢不適的朋友有幫助XD</p>
 
-
 <h3 class="relative group">也許還有別的一些注意事項 
-    <div id="%E4%B9%9F%E8%A8%B1%E9%82%84%E6%9C%89%E5%88%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85" class="anchor"></div>
+    <div id="也許還有別的一些注意事項" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%B9%9F%E8%A8%B1%E9%82%84%E6%9C%89%E5%88%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e4%b9%9f%e8%a8%b1%e9%82%84%e6%9c%89%e5%88%a5%e7%9a%84%e4%b8%80%e4%ba%9b%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a0%85" aria-label="定位點">#</a>
     </span>        
     
 </h3>

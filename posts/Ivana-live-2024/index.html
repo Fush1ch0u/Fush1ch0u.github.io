@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c8dd66b635a05e7e5c5b20e643e7a003e598325bc88c6b153d69e5495b1d72efb9c0a8e9ccb78035117356269b030bd3a304c68d3a17c680692ce969657ff44c.css"
-    integrity="sha512-yN1mtjWgXn5cWyDmQ&#43;egA&#43;WYMlvIjGsVPWnlSVsdcu&#43;5wKjpzLeANRFzViabAwvTowTGjToXxoBpLOlpZX/0TA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.a492b20e84224cd46e49aa60c584ad8ab4d166a38f0b2e9620fddc446124991dcbd9f74a656d45afff4a6bea488b9b8f2019e5bae7c2bd281e095a139905045d.css"
+    integrity="sha512-pJKyDoQiTNRuSapgxYStirTRZqOPCy6WIP3cRGEkmR3L2fdKZW1Fr/9Ka&#43;pIi5uPIBnluufCvSgeCVoTmQUEXQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.3ad74b33440334ca29f8801ec6dac1f314951cf580e503d49631816b48d1f28d03543275f92b651565b48045b90731f47595b1396214b8b6aa11c6990f867f7e.js"
-    integrity="sha512-OtdLM0QDNMop&#43;IAextrB8xSVHPWA5QPUljGBa0jR8o0DVDJ1&#43;StlFWW0gEW5BzH0dZWxOWIUuLaqEcaZD4Z/fg==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f7e04724dda02f8ffdc6b4507869a4010cd1ae9151a97168d5fd3112b9825c5c6ac376f7d11b0bc353a66d91d614f06e749efb7e56da4ee6fa0c900ed45c85f7.js"
+    integrity="sha512-9&#43;BHJN2gL4/9xrRQeGmkAQzRrpFRqXFo1f0xErmCXFxqw3b30RsLw1OmbZHWFPBudJ77flbaTub6DJAO1FyF9w==" data-copy="複製" data-copied="已複製"></script>
   
   
   
@@ -85,6 +85,8 @@
   <meta name="twitter:title" content="聚光燈下｜趁歌舞昇平真高興 來留下記認">
   <meta name="twitter:description" content="去看了王菀之，記一些記得的事。">
 
+    
+  
   
   <script type="application/ld+json">
   [{
@@ -157,6 +159,8 @@
 <link rel="stylesheet" href="/css/syntax-dark.css">
 
 
+  
+  
   
   <meta name="theme-color"/>
   
@@ -700,8 +704,7 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView" class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     目錄
@@ -742,31 +745,6 @@
 
 <script>
 
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -790,7 +768,7 @@
             $(e).removeClass('active').siblings('ul').hide();
           
         });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').addClass('active');
         $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
           $(e).children('a').parents('ul').show();          
         });
@@ -805,7 +783,6 @@
       });
     }
   })();
-
 
 </script>
    </div>
@@ -837,14 +814,13 @@
   
   </figure>
 
-
 <h2 class="relative group">此曲只應天上有 
-    <div id="%E6%AD%A4%E6%9B%B2%E5%8F%AA%E6%87%89%E5%A4%A9%E4%B8%8A%E6%9C%89" class="anchor"></div>
+    <div id="此曲只應天上有" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%AD%A4%E6%9B%B2%E5%8F%AA%E6%87%89%E5%A4%A9%E4%B8%8A%E6%9C%89" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e6%ad%a4%e6%9b%b2%e5%8f%aa%e6%87%89%e5%a4%a9%e4%b8%8a%e6%9c%89" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -871,14 +847,13 @@
   </figure></li>
 </ol>
 
-
 <h2 class="relative group">傾下偈，變身許願池燒臘少女 
-    <div id="%E5%82%BE%E4%B8%8B%E5%81%88%E8%AE%8A%E8%BA%AB%E8%A8%B1%E9%A1%98%E6%B1%A0%E7%87%92%E8%87%98%E5%B0%91%E5%A5%B3" class="anchor"></div>
+    <div id="傾下偈變身許願池燒臘少女" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%82%BE%E4%B8%8B%E5%81%88%E8%AE%8A%E8%BA%AB%E8%A8%B1%E9%A1%98%E6%B1%A0%E7%87%92%E8%87%98%E5%B0%91%E5%A5%B3" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%e5%82%be%e4%b8%8b%e5%81%88%e8%ae%8a%e8%ba%ab%e8%a8%b1%e9%a1%98%e6%b1%a0%e7%87%92%e8%87%98%e5%b0%91%e5%a5%b3" aria-label="定位點">#</a>
     </span>        
     
 </h2>
