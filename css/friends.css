@@ -25,7 +25,7 @@
 /* 狮尾四季春繁体-Regular */
 @font-face {
     font-family: 'SweiSpringCJKtc-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringCJKtc-Regular.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringCJKtc-Regular.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringCJKtc-Regular.woff') format('woff');
     font-display: swap;
 }
@@ -33,7 +33,7 @@
 /* 狮尾四季春繁体-Light */
 @font-face {
     font-family: 'SweiSpringCJKtc-Light';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringCJKtc-Light.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringCJKtc-Light.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringCJKtc-Light.woff') format('woff');
     font-display: swap;
 }
@@ -41,7 +41,7 @@
 /* 狮尾四季春繁体加糖-Bold */
 @font-face {
     font-family: 'SweiSpringSugarCJKtc-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringSugarCJKtc-Bold.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringSugarCJKtc-Bold.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20TC/SweiSpringSugarCJKtc-Bold.woff') format('woff');
     font-display: swap;
 }
@@ -50,7 +50,7 @@
 /* 狮尾四季春简体-Regular */
 @font-face {
     font-family: 'SweiSpringCJKsc-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringCJKsc-Regular.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringCJKsc-Regular.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringCJKsc-Regular.woff') format('woff');
     font-display: swap;
 }
@@ -58,7 +58,7 @@
 /* 狮尾四季春简体-Light */
 @font-face {
     font-family: 'SweiSpringCJKsc-Light';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringCJKsc-Light.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringCJKsc-Light.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringCJKsc-Light.woff') format('woff');
     font-display: swap;
 }
@@ -66,7 +66,7 @@
 /* 狮尾四季春简体加糖-Bold */
 @font-face {
     font-family: 'SweiSpringSugarCJKsc-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringSugarCJKsc-Bold.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringSugarCJKsc-Bold.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20SC/SweiSpringSugarCJKsc-Bold.woff') format('woff');
     font-display: swap;
 }
@@ -75,7 +75,7 @@
 /* 狮尾四季春日文-Regular */
 @font-face {
     font-family: 'SweiSpringCJKjp-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringCJKjp-Regular.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringCJKjp-Regular.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringCJKjp-Regular.woff') format('woff');
     font-display: swap;
 }
@@ -83,7 +83,7 @@
 /* 狮尾四季春日文-Light */
 @font-face {
     font-family: 'SweiSpringCJKjp-Light';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringCJKjp-Light.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringCJKjp-Light.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringCJKjp-Light.woff') format('woff');
     font-display: swap;
 }
@@ -91,7 +91,7 @@
 /* 狮尾四季春日文加糖-Bold */
 @font-face {
     font-family: 'SweiSpringSugarCJKjp-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringSugarCJKjp-Bold.woff2') format('woff2'),
+    src: url('/fonts/SweiSpringSugarCJKjp-Bold.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/max32002/swei-spring@main/WebFont/CJK%20JP/SweiSpringSugarCJKjp-Bold.woff') format('woff');
     font-display: swap;
 }
