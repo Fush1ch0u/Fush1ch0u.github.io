@@ -113,7 +113,7 @@
     "keywords": ["hugo","blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4389"
+    "wordCount": "5304"
   }]
   </script>
 
@@ -551,30 +551,10 @@
 
 
 
-  
-  
-
-
-
-
-
-
 
   
-
-
-
-
-
   
-
-
-
   
-
-
-
-
 
 
 
@@ -586,12 +566,39 @@
 
 
   
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
 
 
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>4389 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">9 分鐘</span><span class="px-2 text-primary-500">&middot;</span><span class="inline-flex items-center">
+  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>5304 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">11 分鐘</span><span class="px-2 text-primary-500">&middot;</span><span class="inline-flex items-center">
   <button
     id="langToggleBtn"
     class="lang-btn"
@@ -641,6 +648,7 @@
   
   
 </div>
+
 
 
 
@@ -745,6 +753,7 @@
     <li><a href="#代碼塊設置為macos風格">代碼塊設置為MacOS風格</a></li>
     <li><a href="#代碼塊文本高亮">代碼塊文本高亮</a></li>
     <li><a href="#給文章增加簡繁切換按鈕">給文章增加簡繁切換按鈕</a></li>
+    <li><a href="#精簡文章列表頁顯示">精簡文章列表頁顯示</a></li>
   </ul>
 </nav>
   </div>
@@ -773,6 +782,7 @@
     <li><a href="#代碼塊設置為macos風格">代碼塊設置為MacOS風格</a></li>
     <li><a href="#代碼塊文本高亮">代碼塊文本高亮</a></li>
     <li><a href="#給文章增加簡繁切換按鈕">給文章增加簡繁切換按鈕</a></li>
+    <li><a href="#精簡文章列表頁顯示">精簡文章列表頁顯示</a></li>
   </ul>
 </nav>
   </div>
@@ -1218,8 +1228,8 @@
 <ol>
 <li>在 layouts/partials/basic.html 中新增一段代碼。因為要把按鈕放在文章信息欄，所以加在那一長串 partials的後面。我是加在了zen-mode這一段的後面</li>
 </ol>
-<pre tabindex="0"><code>{{ if and (eq $scope &#34;single&#34;) (.Params.showZenMode | default (.Site.Params.article.showZenMode | default false)) }}
-{{ $meta.Add &#34;partials&#34; (slice (partial &#34;meta/zen-mode.html&#34; .)) }}
+<pre tabindex="0"><code>  {{ if and (eq $scope &#34;single&#34;) (.Params.showZenMode | default (.Site.Params.article.showZenMode | default false)) }}
+  {{ $meta.Add &#34;partials&#34; (slice (partial &#34;meta/zen-mode.html&#34; .)) }}
 {{ end }}
 </code></pre><p>在這段代碼後新增如下代碼：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--新增简繁切换功能--&gt;</span>
@@ -1495,6 +1505,120 @@
 </details>
 </li>
 </ul>
+<hr>
+
+<h1 class="relative group">精簡文章列表頁顯示 
+    <div id="精簡文章列表頁顯示" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%b2%be%e7%b0%a1%e6%96%87%e7%ab%a0%e5%88%97%e8%a1%a8%e9%a0%81%e9%a1%af%e7%a4%ba" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>blowfish主題的文章列表頁默認是卡片式或列表式兩種樣式。我的列表樣式選擇了最簡單的顯示方式，但依然會讓人覺得信息太多了：<br>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="標題&#43;日期&#43;字數&#43;閱讀時間&#43;summary，什麼都有" src="https://images.imasugu.cc/i/2025/07/%E5%AF%B9%E6%AF%94-1.webp" />
+
+  
+</figure>
+<br>
+經過修改之後，現在的樣式大概是：<br>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="會不會覺得變得清爽了一些？" src="https://images.imasugu.cc/i/2025/07/%E5%AF%B9%E6%AF%94-2.webp" />
+
+  
+</figure>
+<br>
+為了實現這個效果，求助了一番ChatGPT老師。<br>
+我的目標是：文章列表頁（我的是<code>/posts/</code>，讀者朋友可能會叫<code>Archives</code>/<code>posts</code>/<code>articles</code> etc.），我需要在這個列表頁不顯示<code>閱讀時間+字數+標籤+分類+作者+喜歡數+瀏覽數</code>等，只顯示<strong>標題+發布日期+摘要</strong>，但我希望點進去文章詳情頁後信息可以顯示完整。<br>
+ChatGPT老師告訴了我答案。<br>
+基本思路如下：</p>
+<ul>
+<li>文章的Meta（元信息）通過 article-meta/basic.html 控制，比如<code>{{ partial &quot;meta/date.html&quot; .Date }}</code>使用partial函數引入模版，而 basic.html 是通用的，文章列表頁和詳情頁都會被調用，因此需要設置判斷條件，讓 basic.html 只在文章列表頁不顯示部分信息。那麼就需要用 Hugo 的內置變量 .Kind 來判斷當前頁面是否為列表頁。</li>
+</ul>
+<p>Kind 值會返回幾種頁面類型：</p>
+<table>
+  <thead>
+      <tr>
+          <th>Kind 值</th>
+          <th>含义</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>home</code></td>
+          <td>首页</td>
+      </tr>
+      <tr>
+          <td><code>section</code></td>
+          <td>分类页（例如 <code>/posts/</code>）</td>
+      </tr>
+      <tr>
+          <td><code>taxonomy</code></td>
+          <td>标签页、分类页等</td>
+      </tr>
+      <tr>
+          <td><code>taxonomyTerm</code></td>
+          <td>标签或分类列表页</td>
+      </tr>
+      <tr>
+          <td><code>page</code></td>
+          <td>普通内容页（详情页）</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>修改 simple.html，用 dict 方式調用 basic.html，設置 <code>$onlyDate = true</code> 後判斷 <code>if not $onlyDate</code> 包裹其他信息</li>
+</ul>
+<p>詳細過程如下：</p>
+<ol>
+<li>
+<p>在 layouts/partials/article-link 下找到 simple.html，如果沒有的話可以從主題文件夾中複製一個到同樣的位置。在 simple.html 中找到這一段</p>
+<pre tabindex="0"><code>{{ partial &#34;article-meta/basic.html&#34; . }}
+</code></pre><p>將這段替換為：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{{</span> partial <span class="s2">&#34;article-meta/basic.html&#34;</span> <span class="o">(</span>dict <span class="s2">&#34;context&#34;</span> . <span class="s2">&#34;scope&#34;</span> <span class="s2">&#34;list&#34;</span><span class="o">)</span> <span class="o">}}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>打開 layouts/partials/article-meta/basic.html，在代碼靠前部分找到 <code>{{ $scope := default nil }}</code>，在這句後面加入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{{</span> <span class="nv">$onlyDate</span> :<span class="o">=</span> <span class="nb">false</span> <span class="o">}}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>在 basic.html中找到這段代碼：<code>{{ $scope = cond (not .scope) nil .scope }}</code>
+在此之後和<code>{{ end }}</code>中間加入一行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="o">{{</span> <span class="nv">$onlyDate</span> <span class="o">=</span> .onlyDate <span class="p">|</span> default <span class="nb">false</span> <span class="o">}}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>在這段後面應該是如下這兩行代碼：</p>
+<pre tabindex="0"><code>{{ with $context }}
+{{ $meta := newScratch }}
+</code></pre><p>在這段代碼的<strong>前面</strong>插入如下代碼判斷當前是否是列表頁：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{{</span>/* 用 Kind 判断是否为列表页 */<span class="o">}}</span>
+</span></span><span class="line"><span class="cl"><span class="o">{{</span> <span class="k">if</span> or <span class="o">(</span>eq <span class="nv">$scope</span> <span class="s2">&#34;list&#34;</span><span class="o">)</span> <span class="o">(</span>eq <span class="nv">$context</span>.Kind <span class="s2">&#34;section&#34;</span><span class="o">)</span> <span class="o">}}</span>
+</span></span><span class="line"><span class="cl"><span class="o">{{</span> <span class="nv">$onlyDate</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}}</span>
+</span></span><span class="line"><span class="cl"><span class="o">{{</span> end <span class="o">}}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>繼續在 basic.html 中找到如下代碼：</p>
+<pre tabindex="0"><code>{{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial`
+</code></pre><p>在這前面加入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{{</span> <span class="k">if</span> not <span class="nv">$onlyDate</span> <span class="o">}}</span>
+</span></span></code></pre></div></li>
+</ol>
+<p>這樣就修改好了。如果是cardview或者想精簡標籤頁/文章分類頁也是一樣的，	把第五步中的代碼改為<code>.Kind == &quot;taxonomy&quot;</code>其他套著修改應該就可以了？（大概）</p>
 
           
           
