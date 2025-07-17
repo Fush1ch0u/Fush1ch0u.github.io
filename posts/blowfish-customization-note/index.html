@@ -113,7 +113,7 @@
     "keywords": ["hugo","blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "5304"
+    "wordCount": "5357"
   }]
   </script>
 
@@ -598,7 +598,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>5304 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">11 分鐘</span><span class="px-2 text-primary-500">&middot;</span><span class="inline-flex items-center">
+  <time datetime="2025-05-01T00:00:00&#43;08:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><span>5357 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">11 分鐘</span><span class="px-2 text-primary-500">&middot;</span><span class="inline-flex items-center">
   <button
     id="langToggleBtn"
     class="lang-btn"
@@ -1618,7 +1618,12 @@ ChatGPT老師告訴了我答案。<br>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{{</span> <span class="k">if</span> not <span class="nv">$onlyDate</span> <span class="o">}}</span>
 </span></span></code></pre></div></li>
 </ol>
-<p>這樣就修改好了。如果是cardview或者想精簡標籤頁/文章分類頁也是一樣的，	把第五步中的代碼改為<code>.Kind == &quot;taxonomy&quot;</code>其他套著修改應該就可以了？（大概）</p>
+<p>這樣就修改好了。<br>
+<strong>這麼改的缺點也有：</strong></p>
+<ul>
+<li>原本本地部署的時候標籤頁/文章分類頁沒有變化，不知道為何push上去之後這倆頁面也精簡了？（撓頭</li>
+<li>沒有改cardview下的顯示。如果是cardview把第五步中的代碼改為<code>.Kind == &quot;taxonomy&quot;</code>其他套著修改應該就可以了？（大概）</li>
+</ul>
 
           
           
