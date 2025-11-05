@@ -137,45 +137,57 @@ function extractDescription(doc) {
 
 function extractFavicon(doc, siteBaseUrl, callback) {
     const faviconSelectors = [
-        // 优先选择SVG格式（矢量图，不模糊）
         "link[rel='icon'][type='image/svg+xml']",
-        // 优先选择高分辨率版本（从大到小）
         "link[rel='icon'][sizes='256x256']",
         "link[rel='icon'][sizes='128x128']",
         "link[rel='icon'][sizes='64x64']",
-        "link[rel='apple-touch-icon']", // 通常是60x60px或更高，常用于苹果设备
+        "link[rel='apple-touch-icon']",
         "link[rel='icon'][sizes='32x32']",
         "link[rel='icon'][sizes='16x16']",
-        // 通用的rel='icon'或'shortcut icon'
         "link[rel='icon']",
         "link[rel='shortcut icon']"
     ];
 
+    const candidates = [];
+
+    // 收集所有可能的 favicon 链接
     for (const selector of faviconSelectors) {
         const element = doc.querySelector(selector);
         if (element) {
-            let url = element.getAttribute("href");
-            if (url && !url.includes("localhost")) {
-                const fullUrl = url.startsWith("http") ? url : new URL(url, siteBaseUrl).href;
-                console.log(`✅ 找到 favicon (${selector}):`, fullUrl);
-                return callback(fullUrl);
+            let href = element.getAttribute("href");
+            if (href && !href.includes("localhost")) {
+                const fullUrl = href.startsWith("http")
+                    ? href
+                    : new URL(href, siteBaseUrl).href;
+                candidates.push(fullUrl);
             }
         }
     }
 
-    // 检查 `/favicon.ico`
-    const fallbackFavicon = `${siteBaseUrl}/favicon.ico`;
-    fetch(fallbackFavicon, { method: "HEAD" })
-        .then(response => {
-            if (response.ok) {
-                console.log(`✅ 使用默认 favicon: ${fallbackFavicon}`);
-                callback(fallbackFavicon);
-            } else {
-                callback(null);
-            }
-        })
-        .catch(() => callback(null));
+    // 加上默认 fallback
+    candidates.push(`${siteBaseUrl}/favicon.ico`);
+
+    checkNext(0);
+
+    function checkNext(index) {
+        if (index >= candidates.length) {
+            callback(null);
+            return;
+        }
+
+        const img = new Image();
+        img.onload = () => {
+            console.log(`✅ favicon 可用: ${candidates[index]}`);
+            callback(candidates[index]);
+        };
+        img.onerror = () => {
+            console.warn(`❌ favicon 无效: ${candidates[index]}`);
+            checkNext(index + 1);
+        };
+        img.src = candidates[index];
+    }
 }
+
 
 function extractAvatar(doc, siteBaseUrl) {
     const avatarSelectors = [

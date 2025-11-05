@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!btn || !label) return;
 
   const langMap = { s: "cn", t: "hk" };
-  let originalLang = 's'; // 默认简体
-  let currentLang = 's';
+  let originalLang = 'null'; // 不做限定
+  let currentLang = 'null';
 
   function detectInitialLang() {
     const text = document.body.innerText;
@@ -60,7 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
         el.closest('meta[property="og:title"]')
       ) {
         return NodeFilter.FILTER_REJECT;
-      }
+  }  
+      // ✅ 排除代码块
+      if (el.closest('pre') || el.closest('code')) {
+        return NodeFilter.FILTER_REJECT;
+  }
+
         return NodeFilter.FILTER_ACCEPT;
     }
   }
