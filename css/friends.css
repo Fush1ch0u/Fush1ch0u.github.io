@@ -184,3 +184,52 @@ html.dark .friend-card:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4),
                 0 0 2px rgba(var(--color-primary-800), 0.4);
 }
+
+/* 移动端优化 */
+
+@media (max-width: 768px) {
+
+  #friends-list {
+    justify-content: center;
+  }
+
+  .friend-card {
+    width: 100% !important;     /* 一行一张 */
+    max-width: 100% !important;
+    height: auto !important;   /* 取消固定高度 */
+    padding: 14px !important;  /* 手机别太大 padding */
+    gap: 10px;
+  }
+
+  .friend-main {
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .friend-header {
+    height: auto;
+    align-items: center;
+  }
+
+  .friend-name {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .friend-desc {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .friend-avatar {
+    width: 48px;
+    height: 48px;
+    margin-left: 8px;
+    flex-shrink: 0;
+  }
+
+  .friend-favicon {
+    width: 16px;
+    height: 16px;
+  }
+}
