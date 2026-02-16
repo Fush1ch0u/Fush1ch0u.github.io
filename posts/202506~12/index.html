@@ -97,8 +97,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.9d886850af8212f9f9c4d86fbd795de62029641bcbad19ecb32b2cfe6b44dd73611bf1b656e7acca610d80b63dc70801f8af0e5784da7ac392f7b7e39fc41e09.css"
-    integrity="sha512-nYhoUK&#43;CEvn5xNhvvXld5iApZBvLrRnssyss/mtE3XNhG/G2VuesymENgLY9xwgB&#43;K8OV4TaesOS97fjn8QeCQ==">
+    href="/css/main.bundle.min.4a89c1f9e6af16e79543aa4737009c60a4d7461f30825ede44ec04bfd45a80c2a49e51a063d360c831f3189857b1375268c4f458bdb21bb18ed73897a7428c3c.css"
+    integrity="sha512-SonB&#43;eavFueVQ6pHNwCcYKTXRh8wgl7eROwEv9RagMKknlGgY9NgyDHzGJhXsTdSaMT0WL2yG7GO1ziXp0KMPA==">
 
   
   
@@ -256,6 +256,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 300)
 })
 </script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
 
   
 
@@ -1958,19 +1961,92 @@ twikoo.init({
     
 
   </div>
-  <script>
-    
-    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
-      margin: 24,
-      background: 'rgba(0,0,0,0.5)',
-      scrollOffset: 0,
-    })
-    
-  </script>
+  
+  
   
   
   <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
   
+  
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    const selectors = ['.gallery-row', '.figure-row', '.gallery', '.article-content'];
+    
+    
+    Fancybox.bind('[data-fancybox]', {
+      
+      hideScrollbar: false, 
+      
+      
+      animated: true,
+      showClass: "f-fadeIn", 
+      hideClass: "f-fadeOut", 
+      Thumbs: false,
+
+      
+      Toolbar: {
+        display: {
+          left: [],
+          middle: [],
+          right: ["close"], 
+        },
+      },
+      Images: {
+        zoom: false, 
+      },
+    });
+
+    
+    selectors.forEach(selector => {
+      const containers = document.querySelectorAll(selector);
+      containers.forEach((container, index) => {
+        const groupName = 'gallery-group-' + index;
+
+        const images = container.querySelectorAll('img');
+        images.forEach(img => {
+          
+          
+          
+          
+          let captionText = "";
+          const figcaption = img.closest('figure')?.querySelector('figcaption');
+          
+          if (figcaption) {
+             captionText = figcaption.innerText;
+          } else {
+             captionText = img.alt || "";
+          }
+          
+
+          
+          if (img.parentNode.tagName === 'A') {
+            img.parentNode.setAttribute('data-fancybox', groupName);
+            
+            if (captionText) {
+                img.parentNode.setAttribute('data-caption', captionText);
+            }
+            return;
+          }
+
+          
+          const link = document.createElement('a');
+          link.href = img.src;
+          link.setAttribute('data-fancybox', groupName);
+          
+          if (captionText) {
+            link.setAttribute('data-caption', captionText);
+          }
+          
+          img.parentNode.insertBefore(link, img);
+          link.appendChild(img);
+        });
+      });
+    });
+  });
+</script>
   
 
 
