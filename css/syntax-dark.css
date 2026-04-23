@@ -1,7 +1,7 @@
 /* Generated using: hugo gen chromastyles --style=monokai */
 
 /* Background */ :root.dark .bg { color:#f8f8f2;background-color:#272822; }
-/* PreWrapper */ :root.dark  .chroma { color:#f8f8f2;background-color:#667f53;}
+/* PreWrapper */ :root.dark  .chroma { color:#f8f8f2;background-color:#272822; }
 /* Other */ :root.dark  .chroma .x {  }
 /* Error */ :root.dark  .chroma .err { color:#960050;background-color:#1e0010 }
 /* CodeLine */ :root.dark  .chroma .cl {  }
@@ -66,10 +66,10 @@
 /* Operator */ :root.dark  .chroma .o { color:#f92672 }
 /* OperatorWord */ :root.dark  .chroma .ow { color:#f92672 }
 /* Punctuation */ :root.dark  .chroma .p {  }
-/* Comment */ :root.dark  .chroma .c { color:#95917d }
+/* Comment */ :root.dark  .chroma .c { color:#75715e }
 /* CommentHashbang */ :root.dark  .chroma .ch { color:#75715e }
 /* CommentMultiline */ :root.dark  .chroma .cm { color:#75715e }
-/* CommentSingle */ :root.dark  .chroma .c1 { color:#95917d }
+/* CommentSingle */ :root.dark  .chroma .c1 { color:#75715e }
 /* CommentSpecial */ :root.dark  .chroma .cs { color:#75715e }
 /* CommentPreproc */ :root.dark  .chroma .cp { color:#75715e }
 /* CommentPreprocFile */ :root.dark  .chroma .cpf { color:#75715e }
